@@ -738,18 +738,22 @@ function es_the_content( $more_link_text = null, $strip_teaser = false ) {
     global $es_settings;
 
     if ( $es_settings->is_tags_enabled && $es_settings->is_tags_clickable ) {
-	    $tags = get_terms( array(
-		    'taxonomy' => 'es_tags',
-		    'hide_empty' => true,
-		    'fields' => 'id=>name',
-	    ) );
+        $tags = get_terms( array(
+            'taxonomy' => 'es_tags',
+            'hide_empty' => true,
+            'fields' => 'id=>name',
+        ) );
+        $replace = array();
 
-	    if ( ! empty( $tags ) ) {
-		    foreach ( $tags as $id => $tag ) {
-		        $link = "<a href='" . get_term_link( $id, 'es_tags' ) . "'>{$tag}</a>";
-			    $content = str_replace( $tag, $link, $content );
-		    }
-	    }
+        if ( ! empty( $tags ) ) {
+            foreach ( $tags as $id => $tag ) {
+                $replace[ $tag ] = "<a href='" . get_term_link( $id, 'es_tags' ) . "'>{$tag}</a>";
+            }
+        }
+
+        if ( $replace ) {
+            $content = strtr( $content, $replace );
+        }
     }
 
     /**
@@ -770,7 +774,6 @@ add_filter( 'es_the_content', 'convert_smilies',               20 );
 add_filter( 'es_the_content', 'wpautop'                           );
 add_filter( 'es_the_content', 'shortcode_unautop'                 );
 add_filter( 'es_the_content', 'prepend_attachment'                );
-add_filter( 'es_the_content', 'wp_make_content_images_responsive' );
 
 /**
  * Return property status list.
@@ -1676,12 +1679,12 @@ function add_shortcode_builder_button( $editor_id ) {
               display: inline-block;
               width: 38px;
             }
-            
+
             .es-sb-btn:hover {
               opacity: 1;
               border: 0;
             }
-            
+
             .es-sb-btn img {
                 width: 30px;
                 height: auto;

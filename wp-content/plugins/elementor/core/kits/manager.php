@@ -21,16 +21,14 @@ class Manager {
 
 	public function get_active_id() {
 		$id = get_option( self::OPTION_ACTIVE );
-		$kit_post = null;
 
-		if ( $id ) {
-			$kit_post = get_post( $id );
-		}
+		$kit_document = Plugin::$instance->documents->get( $id );
 
-		if ( ! $id || ! $kit_post || 'trash' === $kit_post->post_status ) {
+		if ( ! $kit_document || ! $kit_document instanceof Kit || 'trash' === $kit_document->get_main_post()->post_status ) {
 			$id = $this->create_default();
 			update_option( self::OPTION_ACTIVE, $id );
 		}
+
 		return $id;
 	}
 
@@ -113,12 +111,11 @@ class Manager {
 				'add_color' => __( 'Add Color', 'elementor' ),
 				'add_style' => __( 'Add Style', 'elementor' ),
 				'new_item' => __( 'New Item', 'elementor' ),
-				'new_global' => __( 'New Global', 'elementor' ),
 				'global_color' => __( 'Global Color', 'elementor' ),
 				'global_fonts' => __( 'Global Fonts', 'elementor' ),
 				'global_colors' => __( 'Global Colors', 'elementor' ),
 				'invalid' => __( 'Invalid', 'elementor' ),
-				'color_cannot_be_deleted' => __( 'System Colors can\'t be deleted', 'elementor' ),
+				'color_cannot_be_deleted' => __( 'System Color can\'t be deleted', 'elementor' ),
 				'font_cannot_be_deleted' => __( 'System Font can\'t be deleted', 'elementor' ),
 				'design_system' => __( 'Design System', 'elementor' ),
 				'buttons' => __( 'Buttons', 'elementor' ),

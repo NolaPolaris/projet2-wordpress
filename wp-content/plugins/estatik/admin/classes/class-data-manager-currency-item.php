@@ -8,7 +8,7 @@ class Es_Data_Manager_Currency_Item extends Es_Data_Manager_Item
     /**
      * @var string Data manager item template path.
      */
-    protected $_template_path = '/admin/templates/data-manager/currency-item.php';
+    protected $_template_path = 'data-manager/currency-item.php';
 
     /**
      * @return void

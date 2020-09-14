@@ -98,6 +98,28 @@ class Es_Dashboard_Page extends Es_Object
     {
         return apply_filters( 'es_get_changelog_list', array(
 
+            __( '3.9.7 (September, 10, 2020)', 'es-plugin' ) => '<ul>
+				<li>NEW: WordPress 5.5.1 support added (all versions)</li>
+				<li>NEW: option to override plugin templates via child theme added (all versions)</li>
+				<li>NEW: warning popup message added when deleting RETS profile (Premium)</li>
+				<li>NEW: map marker popup for multiple listings (units) with same lat & long implemented (PRO & Premium)</li>
+				<li>NEW: Web API support added (Premium)</li>
+				<li>NEW: updates queue details & reset options in Synchronization added (Premium)</li>
+				<li>NEW: extra import tools added (pause, editing, one-time import) (Premium)</li>
+				<li>NEW: Debug mode added (Premium)</li>
+				<li>NEW: date selection for updates check added (Premium)</li>
+				<li>NEW: extra filters for synchronization added (Premium)</li>
+				<li>FIX: wp_mail FROM parameter for Request Form widget fixed (all versions)</li>
+				<li>FIX: wp_make_content_images_responsive fix added (all versions)</li>
+				<li>FIX: delete icon display glitch in Data Manager - Labels - Featured fixed (all versions)</li>
+				<li>FIX: tags generation in description fixed (all versions)</li>
+				<li>FIX: PDF flyer bug for PHP 7 fixed (PRO & Premium)</li>
+				<li>FIX: CSS class for html body in Agents (admin area) fixed (PRO & Premium)</li>
+				<li>FIX: address skipping in RETS synchronizer fixed (Premium)</li>
+				<li>FIX: MLS properties cache issue fixed (Premium)</li>
+				<li>minor fixes</li>
+			</ul>',
+
             __( '3.9.6 (June, 6, 2020)', 'es-plugin' ) => '<ul>
 				<li>NEW: REST support on/off option added (all versions)</li>
 				<li>FIX: tmp phrets files creation fixed (Premium)</li>

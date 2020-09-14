@@ -271,8 +271,7 @@ class Es_FBuilder_Helper
 	 * @return string
 	 *    Return template name for input type.
 	 */
-	public static function get_field_options_template( $type )
-	{
+	public static function get_field_options_template( $type ) {
 		$templates = apply_filters( 'es_fbuilder_field_types_templates', array(
 			'text' => 'default',
 			'number' => 'number',

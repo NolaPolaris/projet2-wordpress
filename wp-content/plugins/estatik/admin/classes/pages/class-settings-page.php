@@ -10,10 +10,8 @@ class Es_Settings_Page
      *
      * @return void
      */
-    public static function render()
-    {
-        $template = apply_filters( 'es_settings_template_path', ES_ADMIN_TEMPLATES . 'settings/settings.php' );
-        include_once( $template );
+    public static function render() {
+        es_load_template( 'settings/settings.php', 'admin', 'es_settings_template_path' );
     }
 
     /**
@@ -21,44 +19,43 @@ class Es_Settings_Page
      *
      * @return array
      */
-    public static function get_tabs()
-    {
+    public static function get_tabs() {
         return apply_filters( 'es_settings_get_tabs', array(
             'general' => array(
                 'label' => __( 'General', 'es-plugin' ),
-                'template' => ES_ADMIN_TEMPLATES . 'settings/general-tab.php'
+                'template' => es_locate_template( 'settings/general-tab.php', 'admin' ),
             ),
             'google-services' => array(
 	            'label' => __( 'Google APIs', 'es-plugin' ),
-	            'template' => ES_ADMIN_TEMPLATES . 'settings/google-services.php',
+                'template' => es_locate_template( 'settings/google-services.php', 'admin' ),
             ),
             'layouts' => array(
                 'label' => __( 'Layouts', 'es-plugin' ),
-                'template' => ES_ADMIN_TEMPLATES . 'settings/layouts-tab.php'
+                'template' => es_locate_template( 'settings/layouts-tab.php', 'admin' ),
             ),
             'currency' => array(
                 'label' => __( 'Currency', 'es-plugin' ),
-                'template' => ES_ADMIN_TEMPLATES . 'settings/currency-tab.php'
+                'template' => es_locate_template( 'settings/currency-tab.php', 'admin' ),
             ),
             'emails' => array(
 	            'label' => __( 'Emails', 'es-plugin' ),
-	            'template' => ES_ADMIN_TEMPLATES . 'settings/email-tab.php'
+                'template' => es_locate_template( 'settings/email-tab.php', 'admin' ),
             ),
             'sharing' => array(
                 'label' => __( 'Sharing', 'es-plugin' ),
-                'template' => ES_ADMIN_TEMPLATES . 'settings/sharing-tab.php'
+                'template' => es_locate_template( 'settings/sharing-tab.php', 'admin' ),
             ),
             'color' => array(
                 'label' => __( 'Color', 'es-plugin' ),
-                'template' => ES_ADMIN_TEMPLATES . 'settings/color-tab.php'
+                'template' => es_locate_template( 'settings/color-tab.php', 'admin' ),
             ),
             'account' => array(
 	            'label' => __( 'Account', 'es-plugin' ),
-	            'template' => ES_ADMIN_TEMPLATES . 'settings/account-tab.php'
+                'template' => es_locate_template( 'settings/account-tab.php', 'admin' ),
             ),
             'seo' => array(
 	            'label' => __( 'SEO', 'es-plugin' ),
-	            'template' => ES_ADMIN_TEMPLATES . 'settings/seo-tab.php'
+                'template' => es_locate_template( 'settings/seo-tab.php', 'admin' ),
             ),
         ) );
     }

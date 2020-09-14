@@ -13,16 +13,6 @@ class Es_Single_Shortcode extends Es_Shortcode
 	}
 
     /**
-     * Return proeprty single template name.
-     *
-     * @return mixed
-     */
-    public function get_template_path()
-    {
-        return apply_filters( 'es_single_template_path', ES_TEMPLATES . 'content-single.php' );
-    }
-
-    /**
      * @inheritdoc
      */
     public function build( $atts = array() )

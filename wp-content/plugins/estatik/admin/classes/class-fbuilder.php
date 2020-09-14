@@ -197,6 +197,7 @@ class Es_FBuilder extends Es_Object {
 
                             if ( ! empty( $val ) ) {
 	                            $timestamp = DateTime::createFromFormat( $format, $val );
+	                            $timestamp->setTime( 0, 0, 0 );
 	                            $timestamp = $timestamp instanceof DateTime ? $timestamp->getTimestamp() : null;
                             }
 
@@ -205,6 +206,7 @@ class Es_FBuilder extends Es_Object {
                     }
                 } else if ( ! is_array( $value ) ) {
 					$value = DateTime::createFromFormat( $format, $value );
+					$value->setTime( 0, 0, 0 );
 					$value = $value instanceof DateTime ? $value->getTimestamp() : null;
 
 					if ( $value ) {

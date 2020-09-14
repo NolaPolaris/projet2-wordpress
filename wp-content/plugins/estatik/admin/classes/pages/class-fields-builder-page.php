@@ -104,7 +104,7 @@ class Es_Fields_Builder_Page extends Es_Object
 	 * @return string
 	 */
 	public static function get_template_path( $template ) {
-		$path = ES_ADMIN_TEMPLATES . 'fields-builder' . ES_DS . $template . '.php';
+		$path = es_locate_template( sprintf( 'fields-builder/%s.php', $template ), 'admin' );
 
 		return apply_filters( 'es_fields_buider_get_template_path', $path, $template );
 	}

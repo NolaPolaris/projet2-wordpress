@@ -44,8 +44,7 @@ class Es_Archive_Sorting extends Es_Object
 	 *
 	 * @return void
 	 */
-    public function sorting_dropdown( $shortcode_identifier = '' )
-    {
+    public function sorting_dropdown( $shortcode_identifier = '' ) {
         $template = self::get_template_path( 'dropdown' );
         if ( file_exists( $template ) ) {
             $parsed_url = wp_parse_args( wp_parse_url( es_get_current_url() ) );
@@ -115,9 +114,8 @@ class Es_Archive_Sorting extends Es_Object
      * @param string $type
      * @return mixed
      */
-    public static function get_template_path( $type = 'list' )
-    {
-        return apply_filters( 'es_archive_sorting_template', ES_TEMPLATES . '/sorting-' . $type .'.php' );
+    public static function get_template_path( $type = 'list' ) {
+        return es_locate_template( sprintf( 'sorting-%s.php', $type ), 'front', 'es_archive_sorting_template' );
     }
 
     /**
@@ -125,8 +123,7 @@ class Es_Archive_Sorting extends Es_Object
      *
      * @return mixed
      */
-    public static function get_sorting_dropdown_values()
-    {
+    public static function get_sorting_dropdown_values() {
         return apply_filters( 'es_get_sorting_dropdown_values', array(
             'recent'          => __( 'Most recent',   'es-plugin' ),
             'highest_price'   => __( 'Highest price', 'es-plugin' ),

@@ -11,7 +11,7 @@ class Es_Data_Manager_Label_Item extends Es_Data_Manager_Term_Item
 	 */
 	public function __construct(array $options = array() )
 	{
-		$this->_template_path = '/admin/templates/data-manager/label-item.php';
+		$this->_template_path = 'data-manager/label-item.php';
 		parent::__construct( 'es_labels', $options );
 	}
 

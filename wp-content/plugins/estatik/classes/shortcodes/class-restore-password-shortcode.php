@@ -3,15 +3,15 @@
 /**
  * Class Es_Restore_Password_Shortcode
  */
-class Es_Restore_Password_Shortcode extends Es_Shortcode
-{
+class Es_Restore_Password_Shortcode extends Es_Shortcode {
+
 	/**
 	 * @return string
 	 */
 	public function get_shortcode_title() {
-
 		return __( 'Reset password', 'es-plugin' );
 	}
+
 	/**
 	 * Function used for build shortcode.
 	 * @see add_shortcode
@@ -20,14 +20,10 @@ class Es_Restore_Password_Shortcode extends Es_Shortcode
 	 *
 	 * @return mixed
 	 */
-	public function build($atts = array())
-	{
-		$template = apply_filters( 'es_restore_pwd_template_path', ES_TEMPLATES . '/shortcodes/reset.php' );
+	public function build($atts = array()) {
 		ob_start();
-		include $template;
-
+		include es_locate_template( 'shortcodes/reset.php', 'front', 'es_restore_pwd_template_path' );
 		do_action( 'es_shortcode_after', $this->get_shortcode_name() );
-
 		return ob_get_clean();
 	}
 
@@ -36,8 +32,7 @@ class Es_Restore_Password_Shortcode extends Es_Shortcode
 	 *
 	 * @return string
 	 */
-	public function get_shortcode_name()
-	{
+	public function get_shortcode_name() {
 		return 'es_reset_pwd';
 	}
 }

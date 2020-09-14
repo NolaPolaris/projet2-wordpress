@@ -54,6 +54,20 @@ class Es_Request_Widget extends Es_Widget
     }
 
     /**
+     * @return string
+     */
+    public static function wp_mail_from() {
+        return sanitize_email( filter_input( INPUT_POST, 'email' ) );
+    }
+
+    /**
+     * @return string
+     */
+    public static function wp_mail_from_name() {
+        return sanitize_text_field( filter_input( INPUT_POST, 'name' ) );
+    }
+
+    /**
      * Submit request widget handler.
      *
      * @return void
@@ -96,9 +110,10 @@ class Es_Request_Widget extends Es_Widget
 		                'title' => sprintf( __( 'Request about property #%s', 'es-plugin' ), $post->ID ),
 	                ) );
 
-	                $headers = array('From: '.$name.' <'.$email.'>');
+                    add_filter( 'wp_mail_from', array( 'Es_Request_Widget', 'wp_mail_from' ) );
+                    add_filter( 'wp_mail_from_name', array( 'Es_Request_Widget', 'wp_mail_from_name' ) );
 
-                    if ( wp_mail( $emails, $subject, $message, $headers ) ) {
+                    if ( wp_mail( $emails, $subject, $message ) ) {
                         $response = array( 'status' => 'success', 'message' => __( 'Thank you for your message! We will contact you as soon as we can.', 'es-plugin' ) );
                     } else {
                         $response = array( 'status' => 'error', 'message' => __( 'Your message wasn\'t sent. Please, contact support.', 'es-plugin' ) );

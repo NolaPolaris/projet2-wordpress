@@ -1,4 +1,4 @@
-/*! elementor - v3.0.3 - 27-08-2020 */
+/*! elementor - v3.0.7 - 09-09-2020 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -82,12 +82,12 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 708);
+/******/ 	return __webpack_require__(__webpack_require__.s = 712);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 102:
+/***/ 103:
 /***/ (function(module, exports) {
 
 module.exports = function (bitmap, value) {
@@ -107,7 +107,7 @@ module.exports = function (bitmap, value) {
 
 "use strict";
 
-var at = __webpack_require__(142)(true);
+var at = __webpack_require__(144)(true);
 
  // `AdvanceStringIndex` abstract operation
 // https://tc39.github.io/ecma262/#sec-advancestringindex
@@ -194,8 +194,8 @@ module.exports = function (it) {
 /***/ 12:
 /***/ (function(module, exports, __webpack_require__) {
 
-var store = __webpack_require__(66)('wks');
-var uid = __webpack_require__(67);
+var store = __webpack_require__(67)('wks');
+var uid = __webpack_require__(68);
 var Symbol = __webpack_require__(17).Symbol;
 var USE_SYMBOL = typeof Symbol == 'function';
 
@@ -266,7 +266,7 @@ module.exports = !__webpack_require__(27) && !__webpack_require__(33)(function (
 
 /***/ }),
 
-/***/ 142:
+/***/ 144:
 /***/ (function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(57);
@@ -290,10 +290,10 @@ module.exports = function (TO_STRING) {
 
 /***/ }),
 
-/***/ 143:
+/***/ 145:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(66)('native-function-to-string', Function.toString);
+module.exports = __webpack_require__(67)('native-function-to-string', Function.toString);
 
 
 /***/ }),
@@ -339,7 +339,7 @@ module.exports = function (it) {
 
 /***/ }),
 
-/***/ 181:
+/***/ 182:
 /***/ (function(module, exports, __webpack_require__) {
 
 // 0 -> Array#forEach
@@ -395,8 +395,8 @@ module.exports = function (TYPE, $create) {
 
 "use strict";
 
-var regexpExec = __webpack_require__(88);
-__webpack_require__(37)({
+var regexpExec = __webpack_require__(90);
+__webpack_require__(34)({
   target: 'RegExp',
   proto: true,
   forced: regexpExec !== /./.exec
@@ -455,14 +455,14 @@ module.exports = Array.isArray || function isArray(arg) {
 
 /***/ }),
 
-/***/ 26:
+/***/ 25:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // 22.1.3.8 Array.prototype.find(predicate, thisArg = undefined)
-var $export = __webpack_require__(37);
-var $find = __webpack_require__(181)(5);
+var $export = __webpack_require__(34);
+var $find = __webpack_require__(182)(5);
 var KEY = 'find';
 var forced = true;
 // Shouldn't skip holes
@@ -472,7 +472,7 @@ $export($export.P + $export.F * forced, 'Array', {
     return $find(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
   }
 });
-__webpack_require__(85)(KEY);
+__webpack_require__(87)(KEY);
 
 
 /***/ }),
@@ -492,7 +492,7 @@ module.exports = !__webpack_require__(33)(function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP = __webpack_require__(45);
-var createDesc = __webpack_require__(102);
+var createDesc = __webpack_require__(103);
 module.exports = __webpack_require__(27) ? function (object, key, value) {
   return dP.f(object, key, createDesc(1, value));
 } : function (object, key, value) {
@@ -534,7 +534,7 @@ module.exports = function (exec) {
 
 
 var anObject = __webpack_require__(18);
-var sameValue = __webpack_require__(385);
+var sameValue = __webpack_require__(386);
 var regExpExec = __webpack_require__(94);
 
 // @@search logic
@@ -566,51 +566,13 @@ __webpack_require__(95)('search', 1, function (defined, SEARCH, $search, maybeCa
 
 /***/ }),
 
-/***/ 35:
+/***/ 34:
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(17);
+var core = __webpack_require__(54);
 var hide = __webpack_require__(29);
-var has = __webpack_require__(61);
-var SRC = __webpack_require__(67)('src');
-var $toString = __webpack_require__(143);
-var TO_STRING = 'toString';
-var TPL = ('' + $toString).split(TO_STRING);
-
-__webpack_require__(55).inspectSource = function (it) {
-  return $toString.call(it);
-};
-
-(module.exports = function (O, key, val, safe) {
-  var isFunction = typeof val == 'function';
-  if (isFunction) has(val, 'name') || hide(val, 'name', key);
-  if (O[key] === val) return;
-  if (isFunction) has(val, SRC) || hide(val, SRC, O[key] ? '' + O[key] : TPL.join(String(key)));
-  if (O === global) {
-    O[key] = val;
-  } else if (!safe) {
-    delete O[key];
-    hide(O, key, val);
-  } else if (O[key]) {
-    O[key] = val;
-  } else {
-    hide(O, key, val);
-  }
-// add fake Function#toString for correct work wrapped methods / constructors with methods like LoDash isNative
-})(Function.prototype, TO_STRING, function toString() {
-  return typeof this == 'function' && this[SRC] || $toString.call(this);
-});
-
-
-/***/ }),
-
-/***/ 37:
-/***/ (function(module, exports, __webpack_require__) {
-
-var global = __webpack_require__(17);
-var core = __webpack_require__(55);
-var hide = __webpack_require__(29);
-var redefine = __webpack_require__(35);
+var redefine = __webpack_require__(37);
 var ctx = __webpack_require__(73);
 var PROTOTYPE = 'prototype';
 
@@ -654,7 +616,45 @@ module.exports = $export;
 
 /***/ }),
 
-/***/ 385:
+/***/ 37:
+/***/ (function(module, exports, __webpack_require__) {
+
+var global = __webpack_require__(17);
+var hide = __webpack_require__(29);
+var has = __webpack_require__(61);
+var SRC = __webpack_require__(68)('src');
+var $toString = __webpack_require__(145);
+var TO_STRING = 'toString';
+var TPL = ('' + $toString).split(TO_STRING);
+
+__webpack_require__(54).inspectSource = function (it) {
+  return $toString.call(it);
+};
+
+(module.exports = function (O, key, val, safe) {
+  var isFunction = typeof val == 'function';
+  if (isFunction) has(val, 'name') || hide(val, 'name', key);
+  if (O[key] === val) return;
+  if (isFunction) has(val, SRC) || hide(val, SRC, O[key] ? '' + O[key] : TPL.join(String(key)));
+  if (O === global) {
+    O[key] = val;
+  } else if (!safe) {
+    delete O[key];
+    hide(O, key, val);
+  } else if (O[key]) {
+    O[key] = val;
+  } else {
+    hide(O, key, val);
+  }
+// add fake Function#toString for correct work wrapped methods / constructors with methods like LoDash isNative
+})(Function.prototype, TO_STRING, function toString() {
+  return typeof this == 'function' && this[SRC] || $toString.call(this);
+});
+
+
+/***/ }),
+
+/***/ 386:
 /***/ (function(module, exports) {
 
 // 7.2.9 SameValue(x, y)
@@ -726,7 +726,7 @@ module.exports = function (it) {
 
 /***/ }),
 
-/***/ 55:
+/***/ 54:
 /***/ (function(module, exports) {
 
 var core = module.exports = { version: '2.6.11' };
@@ -885,10 +885,10 @@ module.exports = function (it, key) {
 
 /***/ }),
 
-/***/ 66:
+/***/ 67:
 /***/ (function(module, exports, __webpack_require__) {
 
-var core = __webpack_require__(55);
+var core = __webpack_require__(54);
 var global = __webpack_require__(17);
 var SHARED = '__core-js_shared__';
 var store = global[SHARED] || (global[SHARED] = {});
@@ -904,7 +904,7 @@ var store = global[SHARED] || (global[SHARED] = {});
 
 /***/ }),
 
-/***/ 67:
+/***/ 68:
 /***/ (function(module, exports) {
 
 var id = 0;
@@ -916,7 +916,7 @@ module.exports = function (key) {
 
 /***/ }),
 
-/***/ 708:
+/***/ 712:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -928,7 +928,7 @@ __webpack_require__(334);
 
 __webpack_require__(80);
 
-__webpack_require__(26);
+__webpack_require__(25);
 
 (function ($) {
   var ElementorAdmin = elementorModules.ViewModule.extend({
@@ -1184,7 +1184,7 @@ __webpack_require__(26);
       });
     },
     initMaintenanceMode: function initMaintenanceMode() {
-      var MaintenanceMode = __webpack_require__(709);
+      var MaintenanceMode = __webpack_require__(713);
 
       this.maintenanceMode = new MaintenanceMode();
     },
@@ -1300,13 +1300,13 @@ __webpack_require__(26);
 
 /***/ }),
 
-/***/ 709:
+/***/ 713:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(26);
+__webpack_require__(25);
 
 module.exports = elementorModules.ViewModule.extend({
   getDefaultSettings: function getDefaultSettings() {
@@ -1422,7 +1422,7 @@ var speciesConstructor = __webpack_require__(154);
 var advanceStringIndex = __webpack_require__(105);
 var toLength = __webpack_require__(43);
 var callRegExpExec = __webpack_require__(94);
-var regexpExec = __webpack_require__(88);
+var regexpExec = __webpack_require__(90);
 var fails = __webpack_require__(33);
 var $min = Math.min;
 var $push = [].push;
@@ -1552,7 +1552,7 @@ __webpack_require__(95)('split', 2, function (defined, SPLIT, $split, maybeCallN
 
 /***/ }),
 
-/***/ 85:
+/***/ 87:
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.3.31 Array.prototype[@@unscopables]
@@ -1566,7 +1566,7 @@ module.exports = function (key) {
 
 /***/ }),
 
-/***/ 88:
+/***/ 90:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1678,12 +1678,12 @@ module.exports = function (R, S) {
 "use strict";
 
 __webpack_require__(190);
-var redefine = __webpack_require__(35);
+var redefine = __webpack_require__(37);
 var hide = __webpack_require__(29);
 var fails = __webpack_require__(33);
 var defined = __webpack_require__(42);
 var wks = __webpack_require__(12);
-var regexpExec = __webpack_require__(88);
+var regexpExec = __webpack_require__(90);
 
 var SPECIES = wks('species');
 

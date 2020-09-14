@@ -30,7 +30,7 @@ class Es_Inline_Assets extends Es_Object {
 
             $css = null;
 
-            $css = ".es-btn-orange-bordered, .es-button-orange-corner, .js-es-request-form-show { border: 1px solid {$es_settings->main_color}!important; color:{$es_settings->main_color} !important; }";
+            $css = ".es-btn-orange-bordered, .es-button-orange-corner, .js-es-request-form-show { border: 1px solid {$es_settings->main_color}!important; color:{$es_settings->main_color}; }";
             $css .= ".es-btn-orange-bordered:hover, .es-button-orange-corner:hover, .js-es-request-form-show:hover { background: {$es_settings->main_color}!important; }";
             $css .= ".es-search__wrapper .es-search__field .es-field__wrap .select2 .select2-selection__choice { background: {$es_settings->main_color}!important }";
             $css .= ".es-btn-orange, .es-button-orange { background: {$es_settings->main_color}!important }";

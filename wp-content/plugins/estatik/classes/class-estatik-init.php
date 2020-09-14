@@ -16,7 +16,7 @@ class Estatik
      *
      * @var string
      */
-    protected static $_version = '3.9.6';
+    protected static $_version = '3.9.7';
 
     /**
      * Estatik constructor.
@@ -1015,8 +1015,7 @@ class Estatik
 		global $es_settings;
 
 		if ( $es_settings->powered_by_link ) {
-            $template = apply_filters( 'es_powered_template', ES_TEMPLATES . 'powered.php' );
-			include( $template );
+            es_load_template( 'powered.php', 'front', 'es_powered_template' );
 		}
 	}
 

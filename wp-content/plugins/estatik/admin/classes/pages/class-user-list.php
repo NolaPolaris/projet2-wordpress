@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Class Es_User_List_Page
+ * Class Es_User_List_Page.
  */
-class Es_User_List_Page
-{
+class Es_User_List_Page {
+
 	/**
 	 * @var int
 	 */
@@ -14,8 +14,7 @@ class Es_User_List_Page
 	 * @return void
 	 * @static
 	 */
-	public static function init()
-	{
+	public static function init() {
 		$_ = new self();
 
 		if ( self::is_user_list_page() ) {
@@ -27,8 +26,7 @@ class Es_User_List_Page
 	/**
 	 * @return void
 	 */
-	public function filters()
-	{
+	public function filters() {
 		add_filter( 'admin_body_class', array( $this, 'add_body_class' ) );
 		add_filter( 'user_row_actions', array( $this, 'row_actions' ), 10, 2 );
 		add_filter( 'views_users', array( $this, 'views_users' ), 10, 2 );
@@ -41,8 +39,7 @@ class Es_User_List_Page
 	/**
 	 * @return void
 	 */
-	public function actions()
-	{
+	public function actions() {
 		add_action( 'manage_users_columns', array( $this, 'add_columns'), 10, 2 );
 		// Enqueue styles for our page.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
@@ -58,8 +55,7 @@ class Es_User_List_Page
 	 *
 	 * @return void
 	 */
-	public function agent_actions()
-	{
+	public function agent_actions() {
 		$action = sanitize_key( filter_input( INPUT_GET, 'es-action' ) );
 		$users = ! empty( $_GET['users'] ) ? $_GET['users'] : null;
 
@@ -105,8 +101,7 @@ class Es_User_List_Page
 	 *
 	 * @param WP_User_Query $query
 	 */
-	public function filter_handler( $query )
-	{
+	public function filter_handler( $query ) {
 		// Get filter data.
 		$filter = filter_input( INPUT_GET, 'es_user_filter', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY );
 
@@ -130,12 +125,9 @@ class Es_User_List_Page
 	 *
 	 * @param string $position
 	 */
-	public function users_filter( $position )
-	{
-		$filter_path = apply_filters( 'es_admin_agent_list_filter_path', ES_ADMIN_TEMPLATES . 'buyers/filter.php' );
-
-		if ( file_exists( $filter_path ) && $position == 'top' ) {
-			include ( $filter_path );
+	public function users_filter( $position ) {
+		if ( $position == 'top' ) {
+			es_load_template( 'buyers/filter.php', 'admin', 'es_admin_buyer_list_filter_path' );
 		}
 	}
 
@@ -147,13 +139,15 @@ class Es_User_List_Page
 	 * @param $user_id
 	 * @return int|string
 	 */
-	public function add_columns_values( $output, $column, $user_id )
-	{
+	public function add_columns_values( $output, $column, $user_id ) {
 		$user = es_get_user_entity( $user_id );
 
 		switch ( $column ) {
 			case 'id':
 				return $user_id;
+
+            case 'full_name':
+                return $user->get_full_name();
 
 			case 'status':
 				if ( $user::STATUS_ACTIVE == $user->status ) {
@@ -172,8 +166,7 @@ class Es_User_List_Page
 	 *
 	 * @return void
 	 */
-	public function enqueue_scripts()
-	{
+	public function enqueue_scripts() {
 		$role = sanitize_key( filter_input( INPUT_GET, 'role' ) );
 
 		if ( $role == Es_Buyer::get_role_name() ) {
@@ -194,7 +187,6 @@ class Es_User_List_Page
 	 * @return mixed
 	 */
 	public function add_js_variables( $data ) {
-
 		if ( current_user_can( 'activate_plugins' ) ) {
 			$data['html']['logo'] = es_get_logo();
 		}
@@ -205,8 +197,7 @@ class Es_User_List_Page
 	/**
 	 * @return array
 	 */
-	public function views_users()
-	{
+	public function views_users() {
 		return array();
 	}
 
@@ -217,8 +208,7 @@ class Es_User_List_Page
 	 * @param $user
 	 * @return mixed
 	 */
-	public function row_actions( $actions, $user )
-	{
+	public function row_actions( $actions, $user ) {
 		$actions = array();
 
 		// Customize edit link.
@@ -239,11 +229,11 @@ class Es_User_List_Page
 	 * @param $columns
 	 * @return array
 	 */
-	public function add_columns($columns)
-	{
-		unset( $columns['role'], $columns['posts'] );
+	public function add_columns( $columns ) {
+		unset( $columns['role'], $columns['posts'], $columns['name'] );
 		// Add user ID column.
 		$columns = static::push_column( array( 'id' => __( 'ID', 'es-plugin' ) ),  $columns, 1 );
+        $columns = static::push_column( array( 'full_name' => __( 'Name', 'es-plugin' ) ),  $columns, 3 );
 		$columns = static::push_column( array( 'status' => __( 'Status', 'es-plugin' ) ),  $columns, 8 );
 
 		return $columns;
@@ -255,9 +245,8 @@ class Es_User_List_Page
 	 * @param array $classes
 	 * @return string
 	 */
-	public function add_body_class( $classes )
-	{
-		return $classes . 'es-agent-list-page';
+	public function add_body_class( $classes ) {
+		return $classes . ' es-agent-list-page ';
 	}
 
 	/**
@@ -265,8 +254,7 @@ class Es_User_List_Page
 	 *
 	 * @return bool
 	 */
-	public static function is_user_list_page()
-	{
+	public static function is_user_list_page() {
 		$role = sanitize_key( filter_input( INPUT_GET, 'role' ) );
 		return is_admin() && $role && in_array( $role, es_get_plugin_user_roles() );
 	}
@@ -276,8 +264,7 @@ class Es_User_List_Page
 	 *
 	 * @return void
 	 */
-	public function enqueue_styles()
-	{
+	public function enqueue_styles() {
 		wp_register_style( 'es-admin-user-list-style', ES_ADMIN_CUSTOM_STYLES_URL . 'agent-list.css' );
 		wp_enqueue_style( 'es-admin-user-list-style' );
 		wp_enqueue_style( 'jquery-ui' );
@@ -296,8 +283,7 @@ class Es_User_List_Page
 	 * @return array
 	 *    Array with pushed column by index.
 	 */
-	protected static function push_column( $column, $list, $index )
-	{
+	protected static function push_column( $column, $list, $index ) {
 		return array_merge( array_slice( $list, 0, $index ), $column, array_slice( $list,$index ) );
 	}
 }

@@ -156,7 +156,7 @@ class Es_Property_Single_Page extends Es_Object
 	{
 		$data = self::get_features_data();
 
-		$template = apply_filters( 'es_features_list_template_path', ES_TEMPLATES . '/property/features-list.php' );
+		$template = es_locate_template( 'property/features-list.php', 'front', 'es_features_list_template_path' );
 
 		ob_start();
 		    do_action( 'es_single_tabbed_content_after', 'es-features' );

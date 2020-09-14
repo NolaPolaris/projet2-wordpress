@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-08-27 20:34:41+0000\n"
+"PO-Revision-Date: 2020-08-30 17:34:27+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,8 +29,8 @@ msgid "Please note that this process will revert all changes made to Global Colo
 msgstr "Veuillez noter que ce processus annulera toutes les modifications apportées aux couleurs et polices globales depuis la mise à niveau vers la version 3.x."
 
 #: core/kits/documents/tabs/global-colors.php:24
-#: core/kits/documents/tabs/global-colors.php:31 core/kits/manager.php:119
-#: core/editor/editor.php:619
+#: core/kits/documents/tabs/global-colors.php:31 core/kits/manager.php:118
+#: core/editor/editor.php:616
 msgid "Global Colors"
 msgstr "Couleurs globales"
 
@@ -72,8 +72,8 @@ msgid "Optimized DOM Output"
 msgstr "Sortie DOM optimisée"
 
 #: includes/settings/settings.php:471
-msgid "The Style settings changed its location and can now be found within Elementor Editor's <b>Settings Panel > Hamburger Menu > Global Settings</b>.<br>You can use the Global Manager to make changes and see them live!"
-msgstr "Les réglages de style ont changé d’emplacement et peuvent maintenant être trouvés dans l’éditeur Elementor <b>Panneau des réglages > Menu hamburger > Réglages globaux </b>.<br> Vous pouvez utiliser le gestionnaire global pour faire des modifications et les voir en direct !"
+msgid "The Style settings changed its location and can now be found within Elementor Editor's <b>Settings Panel > Hamburger Menu > Site Settings</b>.<br>You can use the Global Manager to make changes and see them live!"
+msgstr "Les réglages de style ont modifié leur emplacement et peuvent maintenant être trouvés dans l’éditeur Elementor <b>Panneau des réglages > Menu hamburger > Réglages du site </b>.<br> Vous pouvez utiliser le gestionnaire global pour faire des modifications et les voir en direct !"
 
 #: includes/settings/settings.php:468
 msgid "Looking for the Style settings?"
@@ -88,8 +88,8 @@ msgid "Saved Color"
 msgstr "Couleur enregistrée"
 
 #: core/document-types/page-base.php:89
-msgid "Not working? You can set a different selector for the title in Global Settings > Layout"
-msgstr "Ça ne fonctionne pas ? Vous pouvez régler un sélecteur différent pour le titre dans Réglages globaux > Mise en page"
+msgid "Not working? You can set a different selector for the title in Site Settings > Layout"
+msgstr "Ça ne fonctionne pas ? Vous pouvez régler un sélecteur différent pour le titre dans Réglages du site > Mise en page"
 
 #: core/settings/editor-preferences/model.php:70
 msgid "Panel Width"
@@ -107,101 +107,97 @@ msgstr "Attention, veuillez sauvegarder avant de mettre à niveau !"
 msgid "Love using Elementor? Become a super contributor by opting in to share non-sensitive plugin data and to receive periodic email updates from us."
 msgstr "Vous aimez utiliser Elementor ? Devenez un super contributeur en choisissant de partager des données non sensibles sur l’extension et de recevoir des mises à jour périodiques par e-mail de notre part."
 
-#: core/editor/editor.php:649
+#: core/editor/editor.php:644
 msgid "Navigate From Page"
 msgstr "Naviguer à partir de la page"
 
-#: core/editor/editor.php:646 core/settings/editor-preferences/model.php:38
+#: core/editor/editor.php:641 core/settings/editor-preferences/model.php:38
 msgid "User Preferences"
 msgstr "Préférences de l’utilisateur"
 
-#: core/editor/editor.php:644
+#: core/editor/editor.php:639
 msgid "Site Settings"
 msgstr "Réglages du site"
 
-#: core/editor/editor.php:638
+#: core/editor/editor.php:635
 msgid "Are you sure you want to create a new Global Font setting?"
 msgstr "Confirmez-vous vouloir créer un nouveau réglage de police globale ?"
 
-#: core/editor/editor.php:637
+#: core/editor/editor.php:634
 msgid "Please note that a color with the same exact name already exists in your Global Colors list. Are you sure you want to create it?"
 msgstr "Veuillez noter qu’une couleur portant exactement le même nom existe déjà dans votre liste de couleurs globales. Confirmez-vous vouloir la créer ?"
 
-#: core/editor/editor.php:636
+#: core/editor/editor.php:633
 msgid "Please note that the same exact color already exists in your Global Colors list. Are you sure you want to create it?"
 msgstr "Veuillez noter qu’exactement la même couleur existe déjà dans votre liste de couleurs globales. Confirmez-vous vouloir la créer ?"
 
-#: core/editor/editor.php:635
+#: core/editor/editor.php:632
 msgid "Are you sure you want to create a new Global Color?"
 msgstr "Confirmez-vous vouloir créer une nouvelle couleur globale ?"
 
-#: core/editor/editor.php:632
+#: core/editor/editor.php:629
 msgid "Global Fonts help you work smarter. Save a Typography, and use it anywhere throughout your site. Access and edit your Global Fonts by clicking the Manage button."
 msgstr "Les polices globales vous aident à travailler plus intelligemment. Enregistrez une typographie et utilisez-la partout sur votre site. Accédez à vos polices globales et modifiez-les en cliquant sur le bouton « Gérer »."
 
-#: core/editor/editor.php:631
+#: core/editor/editor.php:628
 msgid "You're about to delete a Global Font. Note that if it's being used anywhere on your site, it will inherit a default typography."
 msgstr "Vous êtes sur le point de supprimer une police globale. Notez que si elle est utilisée n’importe où sur votre site, elle héritera d’une typographie par défaut."
 
-#: core/editor/editor.php:630
+#: core/editor/editor.php:627
 msgid "Delete Global Font"
 msgstr "Supprimer la police globale"
 
-#: core/editor/editor.php:629
+#: core/editor/editor.php:626
 msgid "Create New Global Font"
 msgstr "Créer une nouvelle police globale"
 
-#: core/editor/editor.php:628
+#: core/editor/editor.php:625
 msgid "Manage Global Fonts"
 msgstr "Gérer les polices globales"
 
-#: core/editor/editor.php:626
+#: core/editor/editor.php:623
 msgid "New Typography Setting"
 msgstr "Nouveau réglage de typographie"
 
-#: core/editor/editor.php:624
+#: core/editor/editor.php:621
 msgid "Global Colors help you work smarter. Save a color, and use it anywhere throughout your site. Access and edit your global colors by clicking the Manage button."
 msgstr "Les couleurs globales vous aident à travailler plus intelligemment. Enregistrez une couleur et utilisez-la partout sur votre site. Accédez à vos couleurs globales et modifiez-les en cliquant sur le bouton « Gérer »."
 
-#: core/editor/editor.php:623
+#: core/editor/editor.php:620
 msgid "You're about to delete a Global Color. Note that if it's being used anywhere on your site, it will inherit a default color."
 msgstr "Vous êtes sur le point de supprimer une couleur globale. Notez que si elle est utilisée n’importe où sur votre site, elle héritera d’une couleur par défaut."
 
-#: core/editor/editor.php:622
+#: core/editor/editor.php:619
 msgid "Delete Global Color"
 msgstr "Supprimer la couleur globale"
 
-#: core/editor/editor.php:621
+#: core/editor/editor.php:618
 msgid "Create New Global Color"
 msgstr "Créer une nouvelle couleur globale"
 
-#: core/editor/editor.php:620
+#: core/editor/editor.php:617
 msgid "Manage Global Colors"
 msgstr "Gérer les couleurs globales"
 
-#: core/editor/editor.php:618
+#: core/editor/editor.php:615
 msgid "New Global Color"
 msgstr "Nouvelle couleur globale"
 
-#: core/kits/manager.php:130
+#: core/kits/manager.php:129
 msgid "Your changes have been updated."
 msgstr "Vos modifications ont été mises à jour."
 
-#: core/kits/manager.php:129
+#: core/kits/manager.php:128
 msgid "Additional Settings"
 msgstr "Réglages supplémentaires"
 
-#: core/kits/manager.php:123
+#: core/kits/manager.php:122
 msgid "Design System"
 msgstr "Système de conception"
 
-#: core/kits/manager.php:122
+#: core/kits/manager.php:121
 msgid "System Font can't be deleted"
 msgstr "La police système ne peut pas être supprimée"
-
-#: core/kits/manager.php:116
-msgid "New Global"
-msgstr "Nouvelle globale"
 
 #: core/kits/manager.php:115
 msgid "New Item"
@@ -285,11 +281,11 @@ msgstr "Réglages de mise en page"
 msgid "Changes will be reflected in the preview only after the page reloads."
 msgstr "Les modifications seront prises en compte dans l’aperçu uniquement après le rechargement de la page."
 
-#: core/kits/manager.php:121
-msgid "System Colors can't be deleted"
-msgstr "Les couleurs du système ne peuvent pas être supprimées"
-
 #: core/kits/manager.php:120
+msgid "System Color can't be deleted"
+msgstr "La couleur du système ne peut pas être supprimée"
+
+#: core/kits/manager.php:119
 msgid "Invalid"
 msgstr "Non valide"
 
@@ -309,7 +305,7 @@ msgstr "Voir le guide complet"
 msgid "Get introduced to Elementor by watching our \"Getting Started\" video series. It will guide you through the steps needed to create your website. Then click to create your first page."
 msgstr "Faites connaissance avec Elementor en regardant notre série de vidéos « Pour commencer ». Elle vous guidera à travers les étapes nécessaires à la création de votre site web. Puis cliquez pour créer votre première page."
 
-#: core/editor/editor.php:665 includes/settings/settings.php:511
+#: core/editor/editor.php:660 includes/settings/settings.php:511
 msgid "Enable Unfiltered File Uploads"
 msgstr "Permettre les téléversements de fichier non filtré"
 
@@ -430,23 +426,23 @@ msgstr "Utilisez-vous Contact Form 7 ? Essayez Elementor Pro et concevez vos fo
 msgid "Using WooCommerce? With Elementor Pro’s WooCommerce Builder, you’ll be able to design your store without coding!"
 msgstr "Vous utilisez WooCommerce ? Avec le constructeur WooCommerce d’Elementor Pro, vous pourrez concevoir votre boutique sans coder !"
 
-#: core/editor/editor.php:795
+#: core/editor/editor.php:790
 msgid "Create more personalized and dynamic sites by populating data from various sources with dozens of dynamic tags to choose from."
 msgstr "Créer des sites plus personnalisés et plus dynamiques en alimentant des données provenant de diverses sources avec des dizaines de balises dynamiques au choix."
 
-#: core/editor/editor.php:794
+#: core/editor/editor.php:789
 msgid "Dynamic Content"
 msgstr "Contenu dynamique"
 
-#: core/editor/editor.php:793
+#: core/editor/editor.php:788
 msgid "See it in Action"
 msgstr "Voir cela en action"
 
-#: core/editor/editor.php:792
+#: core/editor/editor.php:787
 msgid "Use %s widget and dozens more pro features to extend your toolbox and build sites faster and better."
 msgstr "Utilisez le widget %s et des dizaines d’autres fonctionnalités pro pour étendre votre boîte à outils et mieux et plus vite construire des sites."
 
-#: core/editor/editor.php:791
+#: core/editor/editor.php:786
 msgid "%s Widget"
 msgstr "Le widget %s"
 
@@ -476,7 +472,7 @@ msgstr "Libellé"
 
 #: core/kits/documents/tabs/theme-style-form-fields.php:21
 #: core/kits/documents/tabs/theme-style-form-fields.php:48
-#: core/kits/manager.php:126
+#: core/kits/manager.php:125
 msgid "Form Fields"
 msgstr "Champs de formulaire"
 
@@ -490,7 +486,7 @@ msgstr "Corps"
 
 #: core/kits/documents/tabs/theme-style-buttons.php:22
 #: core/kits/documents/tabs/theme-style-buttons.php:50
-#: core/kits/manager.php:124
+#: core/kits/manager.php:123
 msgid "Buttons"
 msgstr "Boutons"
 
@@ -560,21 +556,9 @@ msgstr "Activé"
 msgid "Pasted"
 msgstr "Collé"
 
-#: core/editor/editor.php:648
+#: core/editor/editor.php:643
 msgid "More"
 msgstr "Plus"
-
-#: core/editor/editor.php:613
-msgid "Drag To Delete"
-msgstr "Glissez pour supprimer"
-
-#: core/editor/editor.php:612
-msgid "Saved Colors"
-msgstr "Couleurs enregistrées"
-
-#: core/editor/editor.php:617
-msgid "Add Picked Color"
-msgstr "Ajouter une couleur choisie"
 
 #: core/editor/editor.php:600
 msgid "Done"
@@ -1004,48 +988,48 @@ msgstr "S’inscrire"
 msgid "Love using Elementor? <a href=\"%s\">Learn how you can build better sites with Elementor Pro.</a>"
 msgstr "Vous aimez utiliser Elementor ? <a href=\"%s\">Découvrez comment créer de meilleurs sites avec Elementor Pro.</a>"
 
-#: core/editor/editor.php:787
+#: core/editor/editor.php:782
 msgid "Become a Pro user to upload unlimited font icon folders to your website."
 msgstr "Devenez un utilisateur Pro pour téléverser un nombre illimité de dossiers d’icônes de polices sur votre site web."
 
-#: core/editor/editor.php:786 includes/controls/media.php:174
+#: core/editor/editor.php:781 includes/controls/media.php:174
 msgid "Upload"
 msgstr "Téléverser"
 
-#: core/editor/editor.php:785
+#: core/editor/editor.php:780
 msgid "My Libraries"
 msgstr "Mes bibliothèques"
 
-#: core/editor/editor.php:784 includes/controls/icons.php:88
+#: core/editor/editor.php:779 includes/controls/icons.php:88
 #: includes/controls/icons.php:122 includes/controls/icons.php:126
 msgid "Icon Library"
 msgstr "Bibliothèque d’icônes"
 
-#: core/editor/editor.php:782
+#: core/editor/editor.php:777
 msgid "Click here for preview debug"
 msgstr "Cliquez ici pour le débogage de prévisualisation"
 
-#: core/editor/editor.php:779
+#: core/editor/editor.php:774
 msgid "Note that %1$s will be completely removed once %2$s %3$s is released."
 msgstr "Notez que %1$s sera totalement retiré une fois que %2$s %3$s est libéré."
 
-#: core/editor/editor.php:778
+#: core/editor/editor.php:773
 msgid "It has been replaced by <strong>%1$s</strong>."
 msgstr "Cela a été remplacé par <strong>%1$s</strong>."
 
-#: core/editor/editor.php:777
+#: core/editor/editor.php:772
 msgid "The <strong>%1$s</strong> widget has been deprecated since %2$s %3$s."
 msgstr "Le widget <strong>%1$s</strong> est obsolète depuis %2$s %3$s."
 
-#: core/editor/editor.php:670
+#: core/editor/editor.php:665
 msgid "Elementor v2.6 includes an upgrade from Font Awesome 4 to 5. In order to continue using icons, be sure to click \"Upgrade\"."
 msgstr "Elementor v2.6 inclut une mise à niveau de Font Awesome 4 vers 5. Pour continuer à utiliser les icônes, assurez-vous de cliquer sur « Mettre à jour »."
 
-#: core/editor/editor.php:669
+#: core/editor/editor.php:664
 msgid "Elementor's New Icon Library"
 msgstr "Nouvelle bibliothèque d’icônes Elementor"
 
-#: core/editor/editor.php:666
+#: core/editor/editor.php:661
 msgid "Before you enable unfiltered files upload, note that this kind of files include a security risk. Elementor does run a process to remove possible malicious code, but there is still risk involved when using such files."
 msgstr "Avant d’activer le téléversement de fichiers non filtrés, notez que ce type de fichier comporte un risque de sécurité. Elementor exécute un processus pour supprimer les éventuels codes malveillants, mais il y a toujours un risque à utiliser ces fichiers."
 
@@ -1094,7 +1078,7 @@ msgstr "Veuillez noter !"
 msgid "Custom Width"
 msgstr "Largeur personnalisée"
 
-#: core/editor/editor.php:789
+#: core/editor/editor.php:784
 msgid "Custom Positioning"
 msgstr "Positionnement personnalisé"
 
@@ -1183,11 +1167,11 @@ msgid "Location"
 msgstr "Emplacement"
 
 #. translators: %s: Name of current post
-#: includes/frontend.php:1336
+#: includes/frontend.php:1339
 msgid "Continue reading %s"
 msgstr "Poursuivre la lecture %s"
 
-#: includes/frontend.php:1329
+#: includes/frontend.php:1332
 msgid "(more&hellip;)"
 msgstr "(plus…)"
 
@@ -1249,7 +1233,7 @@ msgstr "Obtenir le constructeur de fenêtre surgissante"
 msgid "Popups"
 msgstr "Fenêtres surgissantes"
 
-#: core/editor/editor.php:645 core/app/app.php:38 core/app/app.php:39
+#: core/editor/editor.php:640 core/app/app.php:38 core/app/app.php:39
 #: includes/template-library/sources/local.php:1639
 #: assets/js/app-packages.js:9090
 msgid "Theme Builder"
@@ -1397,7 +1381,7 @@ msgstr "Légende du fichier joint"
 msgid "Quit"
 msgstr "Quitter"
 
-#: core/editor/editor.php:774 includes/editor-templates/hotkeys.php:144
+#: core/editor/editor.php:769 includes/editor-templates/hotkeys.php:144
 msgid "Keyboard Shortcuts"
 msgstr "Raccourcis clavier"
 
@@ -1442,7 +1426,7 @@ msgstr "Tableau de bord"
 msgid "Homepage"
 msgstr "Page d’accueil"
 
-#: core/editor/editor.php:634
+#: core/editor/editor.php:631
 #: core/common/modules/finder/categories/create.php:28
 msgid "Create"
 msgstr "Créer"
@@ -1524,7 +1508,7 @@ msgstr "Créez votre première page"
 msgid "Getting Started"
 msgstr "Premiers pas"
 
-#: core/editor/editor.php:654
+#: core/editor/editor.php:649
 msgid "Inner Section"
 msgstr "Section interne"
 
@@ -1540,7 +1524,7 @@ msgstr "La navigation facile est ici !"
 msgid "Empty"
 msgstr "Vide"
 
-#: core/editor/editor.php:767 includes/editor-templates/hotkeys.php:126
+#: core/editor/editor.php:762 includes/editor-templates/hotkeys.php:126
 #: includes/editor-templates/panel.php:72
 #: includes/editor-templates/panel.php:74
 #: includes/editor-templates/navigator.php:12
@@ -1668,31 +1652,31 @@ msgstr "Mode de fusion"
 msgid "Got It"
 msgstr "J’ai compris"
 
-#: core/editor/editor.php:771
+#: core/editor/editor.php:766
 msgid "Now you can access all editing actions using right click."
 msgstr "Vous pouvez maintenant accéder à toutes les actions de modification en utilisant le clic droit."
 
-#: core/editor/editor.php:770
+#: core/editor/editor.php:765
 msgid "Meet Right Click"
 msgstr "Découvrez le clic droit"
 
-#: core/editor/editor.php:765
+#: core/editor/editor.php:760
 msgid "Copy All Content"
 msgstr "Copier tout le contenu"
 
-#: core/editor/editor.php:762
+#: core/editor/editor.php:757
 msgid "Save as a Global"
 msgstr "Enregistrer comme global"
 
-#: core/editor/editor.php:761
+#: core/editor/editor.php:756
 msgid "Reset Style"
 msgstr "Réinitialiser le style"
 
-#: core/editor/editor.php:759
+#: core/editor/editor.php:754
 msgid "Copy Style"
 msgstr "Copier le style"
 
-#: core/editor/editor.php:757 includes/editor-templates/hotkeys.php:35
+#: core/editor/editor.php:752 includes/editor-templates/hotkeys.php:35
 msgid "Copy"
 msgstr "Copier"
 
@@ -1924,7 +1908,7 @@ msgstr "Ajoutez vos polices personnalisées"
 msgid "Custom Fonts"
 msgstr "Polices personnalisées"
 
-#: core/editor/editor.php:681
+#: core/editor/editor.php:676
 msgid "Category"
 msgstr "Catégorie"
 
@@ -1936,11 +1920,11 @@ msgstr "Plus d’actions"
 msgid "Search Templates:"
 msgstr "Rechercher des modèles :"
 
-#: core/editor/editor.php:703
+#: core/editor/editor.php:698
 msgid "Pages"
 msgstr "Pages"
 
-#: core/editor/editor.php:702
+#: core/editor/editor.php:697
 msgid "Blocks"
 msgstr "Blocs"
 
@@ -2028,19 +2012,19 @@ msgstr "Créer un nouvel article"
 msgid "Google Early Access"
 msgstr "Google Early Access"
 
-#: core/editor/editor.php:753
+#: core/editor/editor.php:748
 msgid "Unknown Error"
 msgstr "Erreur inconnue"
 
-#: core/editor/editor.php:748
+#: core/editor/editor.php:743
 msgid "Saving has been disabled until you’re reconnected."
 msgstr "L’enregistrement a été désactivé jusqu’à ce que vous vous soyez reconnecté."
 
-#: core/editor/editor.php:751
+#: core/editor/editor.php:746
 msgid "Server Error"
 msgstr "Erreur serveur"
 
-#: core/editor/editor.php:752
+#: core/editor/editor.php:747
 msgid "Connection Lost"
 msgstr "Connexion perdue"
 
@@ -2124,23 +2108,23 @@ msgctxt "revision date format"
 msgid "M j, H:i"
 msgstr "j M, H:i"
 
-#: core/editor/editor.php:747 core/common/modules/connect/apps/base-app.php:576
+#: core/editor/editor.php:742 core/common/modules/connect/apps/base-app.php:576
 msgid "Dismiss"
 msgstr "Ignorer"
 
-#: core/editor/editor.php:746
+#: core/editor/editor.php:741
 msgid "View All Revisions"
 msgstr "Voir toutes les révisions"
 
-#: core/editor/editor.php:745
+#: core/editor/editor.php:740
 msgid "Have a look"
 msgstr "Regardez"
 
-#: core/editor/editor.php:744
+#: core/editor/editor.php:739
 msgid "Keep Editing"
 msgstr "Continuer à modifier"
 
-#: core/editor/editor.php:743
+#: core/editor/editor.php:738
 msgid "This is just a draft. Play around and when you're done - click update."
 msgstr "C’est juste un brouillon. Jouez et quand vous avez terminé - cliquez sur mettre à jour."
 
@@ -2149,57 +2133,53 @@ msgstr "C’est juste un brouillon. Jouez et quand vous avez terminé - cliquez 
 msgid "Hurray! Your %s is live."
 msgstr "Hourra ! Votre %s est en ligne."
 
-#: core/editor/editor.php:742
+#: core/editor/editor.php:737
 msgid "Submit"
 msgstr "Soumettre"
 
-#: core/editor/editor.php:740
+#: core/editor/editor.php:735
 msgid "Update"
 msgstr "Mettre à jour"
 
-#: core/kits/documents/kit.php:104 core/editor/editor.php:736
+#: core/kits/documents/kit.php:104 core/editor/editor.php:731
 msgid "Published"
 msgstr "Publié"
 
-#: core/editor/editor.php:709
+#: core/editor/editor.php:704
 msgid "Proceed Anyway"
 msgstr "Continuer malgré tout"
 
-#: core/editor/editor.php:708
+#: core/editor/editor.php:703
 msgid "Your browser isn't compatible with all of Elementor's editing features. We recommend you switch to another browser like Chrome or Firefox."
 msgstr "Votre navigateur n’est pas compatible avec toutes les fonctionnalités de modification d’Elementor. Nous vous recommandons de passer à un autre navigateur comme Chrome ou Firefox."
 
-#: core/editor/editor.php:707
+#: core/editor/editor.php:702
 msgid "Your browser isn't compatible"
 msgstr "Votre navigateur n’est pas compatible"
 
-#: core/editor/editor.php:699 core/common/modules/finder/template.php:19
+#: core/editor/editor.php:694 core/common/modules/finder/template.php:19
 msgid "No Results Found"
 msgstr "Aucun résultat trouvé"
 
-#: core/editor/editor.php:698
+#: core/editor/editor.php:693
 msgid "Please make sure your search is spelled correctly or try a different words."
 msgstr "Veuillez vous assurer que votre recherche est bien épelée ou essayez d’autres mots."
 
-#: core/editor/editor.php:697
+#: core/editor/editor.php:692
 msgid "No Favorite Templates"
 msgstr "Aucun modèle favori"
 
-#: core/editor/editor.php:696
+#: core/editor/editor.php:691
 msgid "You can mark any pre-designed template as a favorite."
 msgstr "Vous pouvez marquer chaque modèle préconçu comme favori."
 
-#: core/editor/editor.php:684
+#: core/editor/editor.php:679
 msgid "Import Document Settings"
 msgstr "Importer les réglages du document"
 
-#: core/editor/editor.php:673
+#: core/editor/editor.php:668
 msgid "Show Panel"
 msgstr "Afficher le panneau"
-
-#: core/editor/editor.php:643
-msgid "Dashboard Settings"
-msgstr "Réglages du tableau de bord"
 
 #: includes/editor-templates/templates.php:239 assets/js/app-packages.js:8634
 msgid "Select File"
@@ -2273,7 +2253,7 @@ msgstr "Importer un modèle"
 msgid "Remove"
 msgstr "Retirer"
 
-#: core/editor/editor.php:756 includes/editor-templates/hotkeys.php:67
+#: core/editor/editor.php:751 includes/editor-templates/hotkeys.php:67
 #: includes/editor-templates/repeater.php:21
 msgid "Duplicate"
 msgstr "Dupliquer"
@@ -2282,12 +2262,12 @@ msgstr "Dupliquer"
 msgid "Drag & Drop"
 msgstr "Glisser & déposer"
 
-#: core/editor/editor.php:674 includes/editor-templates/panel.php:152
+#: core/editor/editor.php:669 includes/editor-templates/panel.php:152
 #: includes/editor-templates/panel.php:153
 msgid "Hide Panel"
 msgstr "Masquer le panneau"
 
-#: core/editor/editor.php:763 includes/editor-templates/panel.php:142
+#: core/editor/editor.php:758 includes/editor-templates/panel.php:142
 msgid "Save as Template"
 msgstr "Enregistrer comme modèle"
 
@@ -2300,7 +2280,7 @@ msgstr "Enregistrer le brouillon"
 msgid "Save Options"
 msgstr "Enregistrer les options"
 
-#: core/editor/editor.php:737 includes/editor-templates/panel.php:118
+#: core/editor/editor.php:732 includes/editor-templates/panel.php:118
 msgid "Publish"
 msgstr "Publier"
 
@@ -2309,7 +2289,7 @@ msgstr "Publier"
 msgid "Preview Changes"
 msgstr "Prévisualiser les modifications"
 
-#: core/editor/editor.php:651
+#: core/editor/editor.php:646
 msgid "Exit To Dashboard"
 msgstr "Revenir à l’éditeur WordPress"
 
@@ -2406,19 +2386,19 @@ msgstr "Fin"
 msgid "Start"
 msgstr "Début"
 
-#: core/editor/editor.php:677
+#: core/editor/editor.php:672
 msgid "Type Here"
 msgstr "Écrivez ici"
 
-#: core/editor/editor.php:800
+#: core/editor/editor.php:795
 msgid "Reload Page"
 msgstr "Recharger la page"
 
-#: core/editor/editor.php:802
+#: core/editor/editor.php:797
 msgid "Your session has expired. Please reload the page to continue editing."
 msgstr "Votre session a expiré. Veuillez recharger la page pour continuer à modifier."
 
-#: core/editor/editor.php:801
+#: core/editor/editor.php:796
 msgid "Timeout"
 msgstr "Expiration"
 
@@ -2435,9 +2415,17 @@ msgstr "La prévisualisation n’a pas pu être chargée"
 msgid "Update Notification"
 msgstr "Notification de mise à jour"
 
-#: core/editor/editor.php:804
+#: core/editor/editor.php:799
 msgid "Unknown Value"
 msgstr "Valeur inconnue"
+
+#. Author URI of the plugin
+msgid "https://elementor.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash"
+msgstr "https://elementor.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash"
+
+#. Plugin URI of the plugin
+msgid "https://elementor.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash"
+msgstr "https://elementor.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash"
 
 #: modules/history/views/history-panel-template.php:23
 msgid "Once you start working, you'll be able to redo / undo any action you make in the editor."
@@ -2470,7 +2458,7 @@ msgstr "Déplacé"
 msgid "Added"
 msgstr "Ajouté"
 
-#: core/editor/editor.php:799
+#: core/editor/editor.php:794
 msgid "Documentation"
 msgstr "Documentation"
 
@@ -2608,11 +2596,11 @@ msgstr "Espace des widgets"
 msgid "Add %s"
 msgstr "Ajouter %s"
 
-#: core/editor/editor.php:686
+#: core/editor/editor.php:681
 msgid "Attention: Importing may override previous settings."
 msgstr "Attention : l’importation peut écraser les réglages précédents."
 
-#: core/editor/editor.php:685
+#: core/editor/editor.php:680
 msgid "Do you want to also import the document settings of the template?"
 msgstr "Souhaitez-vous également importer les réglages de document du modèle ?"
 
@@ -2681,7 +2669,7 @@ msgstr "Méthode d’impression CSS"
 msgid "For troubleshooting server configuration conflicts."
 msgstr "Pour la résolution de conflits de configuration serveur."
 
-#: modules/safe-mode/module.php:47 core/editor/editor.php:741
+#: modules/safe-mode/module.php:47 core/editor/editor.php:736
 #: core/debug/inspector.php:55 includes/settings/settings.php:505
 #: includes/settings/settings.php:517 includes/settings/settings.php:528
 #: includes/settings/tools.php:312
@@ -2719,7 +2707,7 @@ msgstr "Sélecteur de titre de page"
 msgid "Select"
 msgstr "Sélectionner"
 
-#: core/editor/editor.php:760 includes/editor-templates/hotkeys.php:51
+#: core/editor/editor.php:755 includes/editor-templates/hotkeys.php:51
 msgid "Paste Style"
 msgstr "Coller le style"
 
@@ -3056,11 +3044,11 @@ msgctxt "revision date format"
 msgid "M j @ H:i"
 msgstr "j M @ h:i"
 
-#: core/kits/manager.php:131
+#: core/kits/manager.php:130
 msgid "Back to Editor"
 msgstr "Retour à l’éditeur"
 
-#: core/editor/editor.php:798
+#: core/editor/editor.php:793
 msgid "Autosave"
 msgstr "Sauvegarde automatique"
 
@@ -3114,7 +3102,7 @@ msgid "Meet Our Custom CSS"
 msgstr "Découvrez nos CSS personnalisés"
 
 #: core/kits/documents/tabs/settings-custom-css.php:17
-#: core/kits/manager.php:128 includes/managers/controls.php:890
+#: core/kits/manager.php:127 includes/managers/controls.php:890
 msgid "Custom CSS"
 msgstr "CSS personnalisé"
 
@@ -3126,7 +3114,7 @@ msgstr "Avec cette fonctionnalité, vous pouvez enregistrer un widget comme glob
 msgid "Meet Our Global Widget"
 msgstr "Découvrez notre widget global"
 
-#: core/editor/editor.php:788 core/editor/notice-bar.php:24
+#: core/editor/editor.php:783 core/editor/notice-bar.php:24
 #: core/admin/admin.php:275 core/admin/admin.php:487
 #: core/role-manager/role-manager.php:168 includes/managers/controls.php:930
 #: includes/editor-templates/templates.php:204
@@ -3189,19 +3177,19 @@ msgstr "Données non valides : l’ID du modèle ne peut pas être le même que
 msgid "Skin"
 msgstr "Habillage"
 
-#: core/editor/editor.php:658
+#: core/editor/editor.php:653
 msgid "Descending order"
 msgstr "Ordre décroissant"
 
-#: core/editor/editor.php:657
+#: core/editor/editor.php:652
 msgid "Ascending order"
 msgstr "Ordre croissant"
 
-#: core/editor/editor.php:662
+#: core/editor/editor.php:657
 msgid "Attention: We are going to DELETE ALL CONTENT from this page. Are you sure you want to do that?"
 msgstr "Attention : vous êtes sur le point de supprimer tout le contenu de cette page. Confirmez-vous vouloir faire cela ?"
 
-#: core/editor/editor.php:661 core/editor/editor.php:766
+#: core/editor/editor.php:656 core/editor/editor.php:761
 msgid "Delete All Content"
 msgstr "Supprimer tout le contenu"
 
@@ -3213,7 +3201,7 @@ msgstr "%s sont désactivés"
 msgid "Update changes to page"
 msgstr "Mettre à jour les modifications apportées à la page"
 
-#: core/editor/editor.php:614
+#: core/editor/editor.php:612
 msgid "Color Picker"
 msgstr "Sélecteur de couleur"
 
@@ -3363,37 +3351,37 @@ msgstr "Synchroniser la librairie"
 msgid "Tools"
 msgstr "Outils"
 
-#: core/editor/editor.php:683
+#: core/editor/editor.php:678
 msgid "Are you sure you want to delete this template?"
 msgstr "Voulez vous vraiment supprimer ce modèle ?"
 
-#: core/editor/editor.php:682
+#: core/editor/editor.php:677
 msgid "Delete Template"
 msgstr "Supprimer le modèle"
 
-#: modules/library/documents/page.php:66 core/editor/editor.php:689
+#: modules/library/documents/page.php:66 core/editor/editor.php:684
 #: core/document-types/page.php:30
 msgid "Page"
 msgstr "Page"
 
 #. translators: %s: Template type.
-#: core/editor/editor.php:691
+#: core/editor/editor.php:686
 msgid "Save Your %s to Library"
 msgstr "Enregistrez votre %s dans la bibliothèque"
 
-#: core/editor/editor.php:700
+#: core/editor/editor.php:695
 msgid "The following error(s) occurred while processing the request:"
 msgstr "Les erreurs suivantes se sont produites lors du traitement de la requête :"
 
-#: core/editor/editor.php:680 includes/utils.php:123
+#: core/editor/editor.php:675 includes/utils.php:123
 msgid "An error occurred"
 msgstr "Une erreur s’est produite"
 
-#: core/editor/editor.php:694
+#: core/editor/editor.php:689
 msgid "This is where your templates should be. Design it. Save it. Reuse it."
 msgstr "Ceci est le lieu où vos modèles doivent être. Créez les, enregistrez les, réutilisez les."
 
-#: core/editor/editor.php:695
+#: core/editor/editor.php:690
 msgid "Haven’t Saved Templates Yet?"
 msgstr "Vous n’avez pas encore de modèles enregistrés ?"
 
@@ -3401,7 +3389,7 @@ msgstr "Vous n’avez pas encore de modèles enregistrés ?"
 msgid "Enter Template Name"
 msgstr "Saisissez le nom du modèle"
 
-#: core/editor/editor.php:692
+#: core/editor/editor.php:687
 msgid "Your designs will be available for export and reuse on any page or website"
 msgstr "Vos designs pourront être exportés et réutilisés pour toute page ou site."
 
@@ -3423,11 +3411,11 @@ msgstr "Retour à la bibliothèque"
 msgid "Insert"
 msgstr "Insérer"
 
-#: core/editor/editor.php:704
+#: core/editor/editor.php:699
 msgid "My Templates"
 msgstr "Mes modèles"
 
-#: core/editor/editor.php:687 core/common/modules/connect/apps/library.php:12
+#: core/editor/editor.php:682 core/common/modules/connect/apps/library.php:12
 msgid "Library"
 msgstr "Bibliothèque"
 
@@ -3464,7 +3452,7 @@ msgstr "Pour modifier le code source de votre thème, nous vous recommandons d�
 
 #: modules/safe-mode/mu-plugin/elementor-safe-mode.php:103
 #: modules/safe-mode/module.php:361 modules/safe-mode/module.php:370
-#: core/editor/editor.php:670 core/editor/editor.php:712
+#: core/editor/editor.php:665 core/editor/editor.php:707
 #: core/admin/admin-notices.php:309 core/admin/admin-notices.php:353
 #: core/admin/admin-notices.php:397 core/admin/admin-notices.php:441
 #: core/admin/admin-notices.php:486 includes/settings/settings.php:471
@@ -3475,12 +3463,12 @@ msgid "Learn More"
 msgstr "En savoir plus"
 
 #: core/kits/documents/tabs/global-typography.php:28
-#: core/kits/documents/tabs/global-typography.php:35 core/kits/manager.php:118
-#: core/editor/editor.php:627
+#: core/kits/documents/tabs/global-typography.php:35 core/kits/manager.php:117
+#: core/editor/editor.php:624
 msgid "Global Fonts"
 msgstr "Polices globales"
 
-#: core/kits/manager.php:117
+#: core/kits/manager.php:116
 msgid "Global Color"
 msgstr "Couleur globale"
 
@@ -3687,12 +3675,12 @@ msgstr "Une nouvelle version d’Elementor Page Builder est disponible. <a href=
 msgid "Custom URL"
 msgstr "URL personnalisée"
 
-#: core/editor/editor.php:758 includes/editor-templates/hotkeys.php:43
+#: core/editor/editor.php:753 includes/editor-templates/hotkeys.php:43
 msgid "Paste"
 msgstr "Coller"
 
 #: core/kits/documents/tabs/settings-background.php:18
-#: core/kits/manager.php:127 includes/elements/column.php:252
+#: core/kits/manager.php:126 includes/elements/column.php:252
 #: includes/elements/section.php:518 includes/widgets/accordion.php:278
 #: includes/widgets/accordion.php:425 includes/widgets/toggle.php:302
 #: includes/widgets/toggle.php:450 includes/widgets/common.php:197
@@ -3772,11 +3760,11 @@ msgstr "Vitesse d’animation"
 msgid "You can crop the original image size to any custom size. You can also set a single value for height or width in order to keep the original size ratio."
 msgstr "Vous pouvez recadrer la taille de l’image d’origine à n’importe quelle taille personnalisée. Vous pouvez également définir une valeur unique pour la hauteur ou la largeur afin de conserver le rapport de taille d’origine."
 
-#: core/editor/editor.php:714
+#: core/editor/editor.php:709
 msgid "You must call 'the_content' function in the current template, in order for Elementor to work on this page."
 msgstr "Vous devez appeller la fonction 'the_content' dans le modèle actuel pour qu’Elementor fonctionne sur cette page."
 
-#: core/editor/editor.php:713
+#: core/editor/editor.php:708
 msgid "Sorry, the content area was not found in your page."
 msgstr "Désolé, la zone de contenu n’a pas été trouvée dans votre page."
 
@@ -3817,12 +3805,12 @@ msgstr "Affichage"
 msgid "The server does not have ImageMagick or GD installed and/or enabled! Any of these libraries are required for WordPress to be able to resize images. Please contact your server administrator to enable this before continuing."
 msgstr "ImageMagick ou GD ne sont pas installés et/ou activés sur le serveur. Une de ces bibliothèques est nécessaire pour que WordPress puisse redimensionner les images. Veuillez contacter l’administrateur de votre serveur afin qu’il les active avant de continuer."
 
-#: core/editor/editor.php:722
+#: core/editor/editor.php:717
 msgid "Insert Media"
 msgstr "Insérez un média"
 
 #. translators: %s: The number of images.
-#: core/editor/editor.php:720
+#: core/editor/editor.php:715
 msgid "%s Images Selected"
 msgstr "%s images sélectionnées"
 
@@ -3856,7 +3844,7 @@ msgctxt "Border Control"
 msgid "Solid"
 msgstr "Continue"
 
-#: core/editor/editor.php:721
+#: core/editor/editor.php:716
 msgid "No Images Selected"
 msgstr "Aucune image sélectionnée"
 
@@ -3868,7 +3856,7 @@ msgstr "Fondu"
 msgid "Effect"
 msgstr "Effet"
 
-#: core/editor/editor.php:718
+#: core/editor/editor.php:713
 msgid "Are you sure you want to reset this gallery?"
 msgstr "Confirmez-vous vouloir réinitialiser cette galerie ?"
 
@@ -3877,7 +3865,7 @@ msgctxt "Image Size Control"
 msgid "Full"
 msgstr "Entière"
 
-#: core/editor/editor.php:717
+#: core/editor/editor.php:712
 msgid "Reset Gallery"
 msgstr "Réinitialiser la galerie"
 
@@ -3941,7 +3929,11 @@ msgstr "Nous recommandons d’utiliser php 5.4 ou supérieur"
 msgid "Elements"
 msgstr "Éléments"
 
-#: core/editor/editor.php:647 core/dynamic-tags/base-tag.php:171
+#. Description of the plugin
+msgid "The most advanced frontend drag & drop page builder. Create high-end, pixel perfect websites at record speeds. Any theme, any page, any design."
+msgstr "Le constructeur de page par glisser-déposer le plus avancé. Créez des sites web haut de gamme aux pixels parfaits à la vitesse de l’éclair. N’importe quel thème, n’importe quelle page, n’importe quelle conception."
+
+#: core/editor/editor.php:642 core/dynamic-tags/base-tag.php:171
 #: core/admin/admin.php:271
 #: core/common/modules/finder/categories/settings.php:28
 #: includes/managers/controls.php:304 includes/editor-templates/panel.php:68
@@ -3979,6 +3971,10 @@ msgstr "Minuscule"
 msgctxt "Typography Control"
 msgid "Uppercase"
 msgstr "Majuscule"
+
+#. Author of the plugin
+msgid "Elementor.com"
+msgstr "Elementor.com"
 
 #: includes/widgets/video.php:545 includes/widgets/video.php:611
 msgid "Play Icon"
@@ -4321,7 +4317,7 @@ msgid "Caption"
 msgstr "Légende"
 
 #: core/kits/documents/tabs/theme-style-images.php:21
-#: core/kits/documents/tabs/theme-style-images.php:39 core/kits/manager.php:125
+#: core/kits/documents/tabs/theme-style-images.php:39 core/kits/manager.php:124
 #: includes/widgets/image-gallery.php:183
 msgid "Images"
 msgstr "Images"
@@ -4767,7 +4763,7 @@ msgstr "Nom"
 msgid "Themes"
 msgstr "Thèmes"
 
-#: core/editor/editor.php:688 includes/managers/icons.php:340
+#: core/editor/editor.php:683 includes/managers/icons.php:340
 #: includes/controls/switcher.php:74 includes/widgets/image-gallery.php:148
 #: includes/widgets/image-carousel.php:151
 #: includes/widgets/image-carousel.php:209
@@ -4779,7 +4775,7 @@ msgstr "Thèmes"
 msgid "No"
 msgstr "Non"
 
-#: core/editor/editor.php:701 includes/managers/icons.php:341
+#: core/editor/editor.php:696 includes/managers/icons.php:341
 #: includes/controls/switcher.php:75 includes/widgets/image-gallery.php:147
 #: includes/widgets/image-carousel.php:152
 #: includes/widgets/image-carousel.php:208
@@ -4941,7 +4937,7 @@ msgstr "Largeur"
 msgid "Layout"
 msgstr "Mise en page"
 
-#: core/editor/editor.php:764
+#: core/editor/editor.php:759
 msgid "Add New Column"
 msgstr "Ajouter une nouvelle colonne"
 
@@ -5029,7 +5025,7 @@ msgstr "Couleur du texte"
 #: core/kits/documents/tabs/theme-style-typography.php:133
 #: core/kits/documents/tabs/theme-style-typography.php:163
 #: core/kits/documents/tabs/theme-style-typography.php:209
-#: core/editor/editor.php:625 core/schemes/typography.php:64
+#: core/editor/editor.php:622 core/schemes/typography.php:64
 #: includes/elements/column.php:607 includes/elements/section.php:1051
 msgid "Typography"
 msgstr "Typographie"
@@ -5042,7 +5038,7 @@ msgstr "Retiré"
 msgid "Column"
 msgstr "Colonne"
 
-#: modules/library/documents/section.php:52 core/editor/editor.php:693
+#: modules/library/documents/section.php:52 core/editor/editor.php:688
 #: includes/elements/section.php:78
 msgid "Section"
 msgstr "Section"
@@ -5084,15 +5080,11 @@ msgstr "Contenu"
 msgid "Columns"
 msgstr "Colonnes"
 
-#: core/editor/editor.php:642
-msgid "About Elementor"
-msgstr "À propos d’Elementor"
-
 #: modules/history/revisions-manager.php:357
 msgid "Revision History"
 msgstr "Historique des révisions"
 
-#: core/editor/editor.php:803
+#: core/editor/editor.php:798
 msgid "Soon"
 msgstr "Bientôt"
 
@@ -5100,20 +5092,20 @@ msgstr "Bientôt"
 msgid "Colors"
 msgstr "Couleurs"
 
-#: core/editor/editor.php:735
+#: core/editor/editor.php:730
 msgid "Please note: All unsaved changes will be lost."
 msgstr "Veuillez noter : toutes les modifications non enregistrées seront perdues."
 
-#: core/editor/editor.php:739
+#: core/editor/editor.php:734
 msgid "Saved"
 msgstr "Enregistré"
 
-#: core/editor/editor.php:727 assets/js/app-packages.js:7835
+#: core/editor/editor.php:722 assets/js/app-packages.js:7835
 #: assets/js/app-packages.js:9296 assets/js/app.js:7099
 msgid "Go Back"
 msgstr "Retour"
 
-#: core/editor/editor.php:728
+#: core/editor/editor.php:723
 msgid "Take Over"
 msgstr "Prendre le contrôle"
 
@@ -5122,12 +5114,12 @@ msgid "Cancel"
 msgstr "Annuler"
 
 #. translators: %s: User name.
-#: core/editor/editor.php:726
+#: core/editor/editor.php:721
 msgid "%s has taken over and is currently editing. Do you want to take over this page editing?"
 msgstr "%s a pris le contrôle et est en cours de modification. Voulez-vous prendre le contrôle de la modification de cette page ?"
 
 #. translators: %s: Template type.
-#: core/editor/editor.php:732
+#: core/editor/editor.php:727
 msgid "Are you sure you want to remove this %s?"
 msgstr "Confirmez-vous vouloir supprimer ce %s ?"
 
@@ -5158,7 +5150,7 @@ msgstr "Réinitialiser"
 msgid "Preview"
 msgstr "Aperçu"
 
-#: core/editor/editor.php:738 includes/editor-templates/hotkeys.php:75
+#: core/editor/editor.php:733 includes/editor-templates/hotkeys.php:75
 #: includes/editor-templates/templates.php:18
 #: includes/editor-templates/templates.php:19
 #: includes/editor-templates/templates.php:211
@@ -5185,7 +5177,7 @@ msgstr "Ordinateur"
 msgid "Responsive Mode"
 msgstr "Mode responsive"
 
-#: core/editor/editor.php:650
+#: core/editor/editor.php:645
 msgid "View Page"
 msgstr "Voir la page"
 
@@ -5238,7 +5230,7 @@ msgstr "Effacer"
 msgid "Select Icon"
 msgstr "Sélectionnez une icône"
 
-#: core/editor/editor.php:639 includes/maintenance-mode.php:226
+#: core/editor/editor.php:636 includes/maintenance-mode.php:226
 #: includes/widgets/image-gallery.php:195
 #: includes/widgets/image-carousel.php:555
 #: includes/widgets/social-icons.php:190 includes/widgets/social-icons.php:351
@@ -5582,7 +5574,7 @@ msgstr "Droite"
 msgid "Top"
 msgstr "Haut"
 
-#: modules/page-templates/module.php:289 core/editor/editor.php:633
+#: modules/page-templates/module.php:289 core/editor/editor.php:630
 #: includes/editor-templates/panel.php:229 includes/elements/column.php:166
 #: includes/elements/column.php:194 includes/elements/column.php:234
 #: includes/elements/section.php:285 includes/elements/section.php:302

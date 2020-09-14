@@ -116,14 +116,10 @@ class Es_Property_List_Page extends Es_Object
      *
      * @return void.
      */
-    public function add_list_filter( $which )
-    {
-        $filter_path = apply_filters('es_admin_list_filter_path', ES_ADMIN_TEMPLATES . 'property/filter.php' );
-
-        if ( file_exists( $filter_path ) && $which == 'top' ) {
+    public function add_list_filter( $which ) {
+        if ( $which == 'top' ) {
             $filter = filter_input( INPUT_GET, 'es_filter', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY );
-
-            include ( $filter_path );
+            include es_locate_template( 'property/filter.php', 'admin', 'es_admin_list_filter_path' );
         }
     }
 
@@ -135,8 +131,7 @@ class Es_Property_List_Page extends Es_Object
      * @return mixed|array
      *    Return customized columns array.
      */
-    public function add_columns( $columns )
-    {
+    public function add_columns( $columns ) {
         // Unset left columns.
         unset($columns['author'], $columns['date']);
 
@@ -206,8 +201,7 @@ class Es_Property_List_Page extends Es_Object
      * @param WP_Query $wp_query
      * @return void
      */
-    public function parse_query( $wp_query )
-    {
+    public function parse_query( $wp_query ) {
         $property = es_get_property( null );
 
         // Get filter data.
@@ -222,21 +216,23 @@ class Es_Property_List_Page extends Es_Object
 
             return;
         } elseif ( ! empty( $filter['address'] ) ) {
-            // Create array from address string using delimiters.
-            if ( $output = preg_split( "/[,\s]/", $filter['address'] ) ) {
+            global $wpdb;
+            $ids = $wpdb->get_col( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key='es_property_address' AND meta_value='%s'", $filter['address'] ) );
+            $ids = $ids ? $ids : array();
 
-                $ids = array();
+            // Create array from address string using delimiters.
+            if ( empty( $ids ) && $output = preg_split( "/[,\s]/", $filter['address'] ) ) {
 
                 foreach ( $output as $key => $address_part ) {
                     if ( empty( $address_part ) ) continue;
                     $ids = array_merge( $ids, $property::find_by_address( $address_part ) );
                 }
+            }
 
-                if ( ! empty( $ids ) ) {
-                    $wp_query->set( 'post__in', $ids );
-                } else {
-                    $flag = true;
-                }
+            if ( ! empty( $ids ) ) {
+                $wp_query->set( 'post__in', $ids );
+            } else {
+                $flag = true;
             }
         }
 

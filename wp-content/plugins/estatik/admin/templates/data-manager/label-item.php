@@ -37,10 +37,6 @@ $colors = Es_Property::get_label_colors(); ?>
 							<a href="#" class="es-item-remove js-item-remove"
 							   data-id="<?php echo $term->term_id; ?>"
 							   data-action="es_ajax_data_manager_remove_term"><span class="es-sprite es-sprite-close"></span></a>
-						<?php else: ?>
-							<a href="#" class="es-item-remove js-item-remove"
-							   data-id="<?php echo $term->term_id; ?>"
-							   data-action="es_ajax_data_manager_remove_term"><span class="es-sprite es-sprite-close" style="visibility: hidden;"></span></a>
 						<?php endif; ?>
 					</li>
 				<?php endforeach; ?>

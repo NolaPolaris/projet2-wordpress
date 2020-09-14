@@ -30,13 +30,8 @@ class Es_Data_Manager_Page extends Es_Object
      *
      * @return void
      */
-    public static function render()
-    {
-        $template = apply_filters( 'es_data_manager_page_template', ES_PLUGIN_PATH . '/admin/templates/data-manager/data-manager.php' );
-
-        if ( file_exists( $template ) ) {
-            include_once( $template );
-        }
+    public static function render() {
+        es_load_template( 'data-manager/data-manager.php', 'admin', 'es_data_manager_page_template' );
     }
 
     /**
@@ -49,27 +44,27 @@ class Es_Data_Manager_Page extends Es_Object
         return apply_filters( 'es_data_manager_get_tabs', array(
             'properties-details' => array(
                 'label' => __( 'Properties details', 'es-plugin' ),
-                'template' => ES_PLUGIN_PATH . '/admin/templates/data-manager/properties-details-tab.php'
+                'template' => es_locate_template( 'data-manager/properties-details-tab.php', 'admin' ),
             ),
             'features' => array(
                 'label' => __( 'Features', 'es-plugin' ),
-                'template' => ES_PLUGIN_PATH . '/admin/templates/data-manager/features-tab.php'
+                'template' => es_locate_template( 'data-manager/features-tab.php', 'admin' ),
             ),
             'labels' => array(
 	            'label' => __( 'Labels', 'es-plugin' ),
-	            'template' => ES_PLUGIN_PATH . '/admin/templates/data-manager/labels-tab.php'
+                'template' => es_locate_template( 'data-manager/labels-tab.php', 'admin' ),
             ),
             'currencies' => array(
                 'label' => __( 'Currencies', 'es-plugin' ),
-                'template' => ES_PLUGIN_PATH . '/admin/templates/data-manager/currencies-tab.php'
+                'template' => es_locate_template( 'data-manager/currencies-tab.php', 'admin' ),
             ),
             'dimensions' => array(
 	            'label' => __( 'Dimensions', 'es-plugin' ),
-	            'template' => ES_PLUGIN_PATH . '/admin/templates/data-manager/dimensions-tab.php'
+                'template' => es_locate_template( 'data-manager/dimensions-tab.php', 'admin' ),
             ),
             'addresses' => array(
 	            'label' => __( 'Addresses', 'es-plugin' ),
-	            'template' => ES_PLUGIN_PATH . '/admin/templates/data-manager/addresses-tab.php'
+                'template' => es_locate_template( 'data-manager/addresses-tab.php', 'admin' ),
             ),
         ) );
     }

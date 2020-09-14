@@ -404,11 +404,18 @@ class Es_Search_Widget extends Es_Widget
 				                            foreach ( $value as $key => $t ) {
 				                                if ( $t ) {
 					                                $timestamp = DateTime::createFromFormat( $es_settings->date_format, $t );
+					                                $timestamp->setTime( 0, 0, 0 );
 					                                $value[$key] = $timestamp instanceof DateTime ? $timestamp->getTimestamp() : null;
                                                 }
 				                            }
 			                            } else {
 				                            $value = strtotime( $value );
+				                            if ( $value ) {
+                                                $timestamp = new DateTime();
+                                                $timestamp->setTimestamp( $value );
+                                                $timestamp->setTime( 0, 0, 0 );
+                                                $value = $timestamp instanceof DateTime ? $timestamp->getTimestamp() : null;
+                                            }
 			                            }
 		                            }
 
@@ -554,12 +561,12 @@ class Es_Search_Widget extends Es_Widget
 		        $query = sanitize_text_field( $_POST['s'] );
 		        $num_to_show = apply_filters( 'es_autocomplete_addresses_to_show', 10 );
 
-		        $sql = $wpdb->prepare( "SELECT meta_value 
+		        $sql = $wpdb->prepare( "SELECT meta_value
                     FROM $wpdb->postmeta as m INNER JOIN $wpdb->posts as p
-                    ON p.ID=m.post_id 
-                    WHERE meta_key = 'es_property_address' 
-                    AND post_status='publish' 
-                    AND LOWER(`meta_value`) 
+                    ON p.ID=m.post_id
+                    WHERE meta_key = 'es_property_address'
+                    AND post_status='publish'
+                    AND LOWER(`meta_value`)
                     LIKE '%s'", array( '%' . es_strtolower( $query ) . '%' ) );
 
 		        $results_addresses = $wpdb->get_col( $sql );

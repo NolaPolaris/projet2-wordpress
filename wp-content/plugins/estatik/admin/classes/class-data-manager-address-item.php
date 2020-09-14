@@ -38,7 +38,6 @@ class Es_Data_Manager_Address_Item {
 	 * @return void
 	 */
 	public function render() {
-
 		es_load_template( 'data-manager/address-item.php', 'admin', null, array(
 			'object' => $this,
 		) );
@@ -50,7 +49,6 @@ class Es_Data_Manager_Address_Item {
 	 * @return void
 	 */
 	public static function ajax_remove_item() {
-
 		if ( check_ajax_referer( 'es_admin_nonce', 'nonce' ) && current_user_can( 'es_delete_dm_item' ) && ! empty( $_POST['id'] ) ) {
 			ES_Address_Components::delete_component( intval( $_POST['id'] ) );
 

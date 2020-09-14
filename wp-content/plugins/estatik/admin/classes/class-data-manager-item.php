@@ -20,7 +20,7 @@ class Es_Data_Manager_Item
     /**
      * @var string Data manager item template path.
      */
-    protected $_template_path = '/admin/templates/data-manager/item.php';
+    protected $_template_path = 'data-manager/item.php';
 
     /**
      * Es_Data_Manager_Item constructor.
@@ -29,8 +29,7 @@ class Es_Data_Manager_Item
      * @param $current_option_name
      * @param $options
      */
-    public function __construct( $option_storage_name, $current_option_name, $options = array() )
-    {
+    public function __construct( $option_storage_name, $current_option_name, $options = array() ) {
         $this->_option_storage_name = sanitize_key( $option_storage_name );
         $this->_current_option_name = sanitize_key( $current_option_name );
         $this->_options = $options;
@@ -41,9 +40,9 @@ class Es_Data_Manager_Item
      *
      * @return mixed
      */
-    protected function get_template_path()
-    {
-        return apply_filters( 'es_data_manager_item_get_template_path', ES_PLUGIN_PATH . $this->_template_path, get_called_class() );
+    protected function get_template_path() {
+        $path = es_locate_template( $this->_template_path, 'admin' );
+        return apply_filters( 'es_data_manager_item_get_template_path', $path, get_called_class() );
     }
 
     /**
@@ -80,11 +79,8 @@ class Es_Data_Manager_Item
      *
      * @return void
      */
-    public function render()
-    {
-        if ( file_exists( $this->get_template_path() ) ) {
-            include ( $this->get_template_path() );
-        }
+    public function render() {
+        include $this->get_template_path();
     }
 
     /**

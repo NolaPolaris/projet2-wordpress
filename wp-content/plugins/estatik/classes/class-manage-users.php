@@ -8,8 +8,7 @@ class Es_Manage_Users extends Es_Object
 	/**
 	 * @inheritdoc
 	 */
-	public function actions()
-	{
+	public function actions() {
 		add_action( 'init', array( $this, 'restore_password' ) );
 		add_action( 'init', array( $this, 'check_active_state' ) );
 		add_action( 'register_new_user', array( $this, 'send_new_user_notifications'), 9 );
@@ -18,6 +17,7 @@ class Es_Manage_Users extends Es_Object
 		add_action( 'admin_notices', array( $this, 'admin_notices' ) );
 		add_action( 'wp_logout', array( $this, 'logout_message' ) );
 		add_action( 'init', array( $this, 'save_profile' ) );
+        add_filter( 'get_avatar' , array( 'Es_Manage_Users', 'get_avatar' ) , 1 , 5 );
 
 		$login = ! empty( $_REQUEST[ 'es-login' ] ) ? $_REQUEST[ 'es-login' ] : '';
 		$login = sanitize_key( $login );
@@ -29,6 +29,47 @@ class Es_Manage_Users extends Es_Object
 		parent::actions();
 	}
 
+    /**
+     * @param $avatar
+     * @param $id_or_email
+     * @param $size
+     * @param $default
+     * @param $alt
+     * @return string
+     */
+    public static function get_avatar( $avatar, $id_or_email, $size, $default, $alt ) {
+        $user = false;
+
+        if ( is_numeric( $id_or_email ) ) {
+
+            $id = (int) $id_or_email;
+            $user = get_user_by( 'id' , $id );
+
+        } elseif ( is_object( $id_or_email ) ) {
+
+            if ( ! empty( $id_or_email->user_id ) ) {
+                $id = (int) $id_or_email->user_id;
+                $user = get_user_by( 'id' , $id );
+            }
+
+        } else {
+            $user = get_user_by( 'email', $id_or_email );
+        }
+
+        if ( $user && is_object( $user ) && ( $entity = es_get_user_entity( $user->ID ) ) ) {
+            $src = $entity->get_image_url( $size ) ? $entity->get_image_url( $size ) : ES_PLUGIN_URL . 'assets/images/agent.png';
+
+            $avatar = "<img alt='{$alt}' src='{$src}' class='es-agent-avatar' width='{$size}' height='{$size}'/>";
+        }
+
+        return $avatar;
+    }
+
+    /**
+     * Save user profile action.
+     *
+     * @return void
+     */
 	public function save_profile() {
 
 	    $nonce = 'es_save_profile';
@@ -234,7 +275,7 @@ class Es_Manage_Users extends Es_Object
                         <b><?php _e( 'Estatik', 'es-plugin' ); ?></b>:
                         <?php echo sprintf(
                             __( 'Please, create a registration page with <b>[es_register]</b> shortcode and set it on %s page.', 'es-plugin' ),
-                            '<a href="' . es_admin_settings_uri() . '" target="_blank">' . __( 'Estatik General settings' ) . '</a>'
+                            '<a href="' . es_admin_settings_uri() . '" target="_blank">' . __( 'Estatik General settings', 'es-plugin' ) . '</a>'
                         ); ?>
                     </p>
                 </div>
@@ -249,7 +290,7 @@ class Es_Manage_Users extends Es_Object
                         <b><?php _e( 'Estatik', 'es-plugin' ); ?></b>:
                         <?php echo sprintf(
                             __( 'Please, create a login page with <b>[es_login]</b> shortcode and set it on %s page.', 'es-plugin' ),
-                            '<a href="' . es_admin_settings_uri() . '" target="_blank">' . __( 'Estatik General settings' ) . '</a>'
+                            '<a href="' . es_admin_settings_uri() . '" target="_blank">' . __( 'Estatik General settings', 'es-plugin' ) . '</a>'
                         ); ?>
                     </p>
                 </div>
@@ -264,7 +305,7 @@ class Es_Manage_Users extends Es_Object
                         <b><?php _e( 'Estatik', 'es-plugin' ); ?></b>:
                         <?php echo sprintf(
                             __( 'Please, create a password reset page with <b>[es_reset_pwd]</b> shortcode and set it on %s page.', 'es-plugin' ),
-                            '<a href="' . es_admin_settings_uri() . '" target="_blank">' . __( 'Estatik General settings' ) . '</a>'
+                            '<a href="' . es_admin_settings_uri() . '" target="_blank">' . __( 'Estatik General settings', 'es-plugin' ) . '</a>'
                         ); ?>
                     </p>
                 </div>
@@ -362,11 +403,11 @@ class Es_Manage_Users extends Es_Object
 		$errors = new WP_Error();
 
 		if ( empty( $_POST['user_login'] ) ) {
-			$errors->add('empty_username', __('<strong>ERROR</strong>: Enter a username or email address.'));
+			$errors->add('empty_username', __( '<strong>ERROR</strong>: Enter a username or email address.', 'es-plugin' ) );
 		} elseif ( strpos( $_POST['user_login'], '@' ) ) {
 			$user_data = get_user_by( 'email', sanitize_email( $_POST['user_login'] ) );
 			if ( empty( $user_data ) )
-				$errors->add('invalid_email', __('<strong>ERROR</strong>: There is no user registered with that email address.'));
+				$errors->add('invalid_email', __( '<strong>ERROR</strong>: There is no user registered with that email address.', 'es-plugin' ) );
 		} else {
 			$login = sanitize_text_field( $_POST['user_login'] );
 			$user_data = get_user_by( 'login', $login );
@@ -387,7 +428,7 @@ class Es_Manage_Users extends Es_Object
 			return $errors;
 
 		if ( empty( $user_data ) ) {
-			$errors->add('invalidcombo', __('<strong>ERROR</strong>: Invalid username or email.'));
+			$errors->add('invalidcombo', __( '<strong>ERROR</strong>: Invalid username or email.', 'es-plugin' ) );
 			return $errors;
 		}
 
@@ -400,11 +441,11 @@ class Es_Manage_Users extends Es_Object
 			return $key;
 		}
 
-		$message = __('Someone has requested a password reset for the following account:') . "<br>";
+		$message = __( 'Someone has requested a password reset for the following account:', 'es-plugin' ) . "<br>";
 		$message .= network_home_url( '/' ) . "<br>";
-		$message .= sprintf(__('Username: %s'), $user_login) . "<br>";
-		$message .= __('If this was a mistake, just ignore this email and nothing will happen.') . "<br>";
-		$message .= __('To reset your password, visit the following address:') . "<br>";
+		$message .= sprintf( __( 'Username: %s', 'es-plugin' ), $user_login ) . "<br>";
+		$message .= __( 'If this was a mistake, just ignore this email and nothing will happen.', 'es-plugin' ) . "<br>";
+		$message .= __( 'To reset your password, visit the following address:', 'es-plugin' ) . "<br>";
 		$message .= network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user_login), 'login');
 
 		if ( is_multisite() ) {
@@ -418,7 +459,7 @@ class Es_Manage_Users extends Es_Object
 		}
 
 		/* translators: Password reset email subject. 1: Site name */
-		$title = sprintf( __('[%s] Password Reset'), $blogname );
+		$title = sprintf( __( '[%s] Password Reset', 'es-plugin' ), $blogname );
 
 		/**
 		 * Filters the subject of the password reset email.
@@ -448,7 +489,7 @@ class Es_Manage_Users extends Es_Object
         $message = es_email_content( 'emails/password-request.php', array( 'message' => $message ) );
 
 		if ( $message && !wp_mail( $user_email, wp_specialchars_decode( $title ), $message ) )
-			wp_die( __('The email could not be sent.') . "<br />\n" . __('Possible reason: your host may have disabled the mail() function.') );
+			wp_die( __( 'The email could not be sent.', 'es-plugin' ) . "<br />\n" . __( 'Possible reason: your host may have disabled the mail() function.', 'es-plugin' ) );
 
 		return true;
 	}
@@ -481,7 +522,7 @@ class Es_Manage_Users extends Es_Object
 			} else {
 
 				add_filter( 'wp_die_handler', function() use ( $messenger ) {
-					$messenger->set_message( __( 'Email didn\'t sent. PHP Mail is doesn\'t work.' ) , 'error' );
+					$messenger->set_message( __( 'Email didn\'t sent. PHP Mail is doesn\'t work.', 'es-plugin' ) , 'error' );
 					wp_redirect( esc_url( $_POST['redirect'] ) ); die;
 				} );
 
@@ -519,14 +560,14 @@ class Es_Manage_Users extends Es_Object
 
 			if ( 'user' !== $notify ) {
 				$switched_locale = switch_to_locale( get_locale() );
-				$message  = sprintf( __( 'New user registration on your site %s:' ), $blogname ) . "<br>";
-				$message .= sprintf( __( 'Username: %s' ), $user->user_login ) . "<br>";
-				$message .= sprintf( __( 'Email: %s' ), $user->user_email ) . "<br>";
+				$message  = sprintf( __( 'New user registration on your site %s:', 'es-plugin' ), $blogname ) . "<br>";
+				$message .= sprintf( __( 'Username: %s', 'es-plugin' ), $user->user_login ) . "<br>";
+				$message .= sprintf( __( 'Email: %s', 'es-plugin' ), $user->user_email ) . "<br>";
 				$message = apply_filters( 'es_user_registered_email_message', $message, $user, $notify );
 
 				$message = es_email_content( 'emails/user-registered.php', array( 'message' => $message, 'title' => __( 'New user registered', 'es-plugin' ) ) );
 
-				@wp_mail( get_option( 'admin_email' ), sprintf( __( '[%s] New User Registration' ), $blogname ), $message );
+				@wp_mail( get_option( 'admin_email' ), sprintf( __( '[%s] New User Registration', 'es-plugin' ), $blogname ), $message );
 
 				if ( $switched_locale ) {
 					restore_previous_locale();
@@ -546,8 +587,8 @@ class Es_Manage_Users extends Es_Object
 
 			$switched_locale = switch_to_locale( get_user_locale( $user ) );
 
-			$message = sprintf(__('<b>Username</b>: %s'), $user->user_login) . "<br>";
-			$message .= __('To set your password, visit the following address:') . "<br>";
+			$message = sprintf( __( '<b>Username</b>: %s', 'es-plugin' ), $user->user_login ) . "<br>";
+			$message .= __( 'To set your password, visit the following address:', 'es-plugin' ) . "<br>";
 
 			global $es_settings;
 
@@ -561,7 +602,7 @@ class Es_Manage_Users extends Es_Object
 
 			$message = es_email_content( 'emails/user-registered.php', array( 'message' => $message, 'title' => __( 'New user registered', 'es-plugin' ) ) );
 
-			wp_mail($user->user_email, sprintf(__('[%s] Your username and password info'), $blogname), $message);
+			wp_mail($user->user_email, sprintf(__('[%s] Your username and password info', 'es-plugin'), $blogname), $message);
 
 			if ( $switched_locale ) {
 				restore_previous_locale();

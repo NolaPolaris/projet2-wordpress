@@ -12,7 +12,7 @@ class Es_Data_Manager_Term_Item extends Es_Data_Manager_Item
     /**
      * @var string Data manager item template path.
      */
-    protected $_template_path = '/admin/templates/data-manager/term-item.php';
+    protected $_template_path = 'data-manager/term-item.php';
 
     /**
      * Es_Data_manager_Item constructor.
@@ -20,8 +20,7 @@ class Es_Data_Manager_Term_Item extends Es_Data_Manager_Item
      * @param $taxonomy
      * @param array $options
      */
-    public function __construct( $taxonomy, array $options = array() )
-    {
+    public function __construct( $taxonomy, array $options = array() ) {
         parent::__construct( false, false, $options );
         $this->_taxonomy = get_taxonomy( $taxonomy );
     }
@@ -31,8 +30,7 @@ class Es_Data_Manager_Term_Item extends Es_Data_Manager_Item
      *
      * @return void
      */
-    public function render()
-    {
+    public function render() {
         if ( ! empty( $this->_taxonomy ) ) {
             parent::render();
         }
@@ -43,8 +41,7 @@ class Es_Data_Manager_Term_Item extends Es_Data_Manager_Item
      *
      * @return array|int|null|WP_Error
      */
-    public function getItems()
-    {
+    public function getItems() {
         $items = ! empty( $this->_taxonomy ) ?
             get_terms( array( 'taxonomy' => $this->_taxonomy->name, 'hide_empty' => false ) ) : null;
 
@@ -56,8 +53,7 @@ class Es_Data_Manager_Term_Item extends Es_Data_Manager_Item
      *
      * @return void
      */
-    public static function save()
-    {
+    public static function save() {
         // Nonce field name.
         $nonce = 'es_add_data_manager_term';
 
@@ -91,8 +87,7 @@ class Es_Data_Manager_Term_Item extends Es_Data_Manager_Item
      *
      * @return void
      */
-    public static function remove()
-    {
+    public static function remove() {
         // If valid ajax request.
         if ( check_ajax_referer( 'es_admin_nonce', 'nonce' ) && current_user_can( 'es_delete_dm_item' ) && ! empty( $_POST['id'] ) ) {
             $term = get_term( intval( $_POST['id'] ) );

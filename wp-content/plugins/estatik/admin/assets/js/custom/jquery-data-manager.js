@@ -22,11 +22,11 @@ jQuery.fn.dataManagerItem = function(options) {
             if (response.status) {
                 $msg.removeClass('success', 'warning', 'error').addClass(response.status).html(response.message);
 
-                if (response.status == 'success' && response.item) {
+                if (response.status === 'success' && response.item) {
                     if (response.content) {
                         $ul.append(response.content);
                     } else {
-                        var radio = container != undefined ? '<input type="radio" class="js-item-radio" data-action="es_ajax_data_manager_check_option" ' +
+                        var radio = container !== 'undefined' ? '<input type="radio" class="js-item-radio" data-action="es_ajax_data_manager_check_option" ' +
                             'name="id" value="' + response.item + '">' : '';
                         $ul.append('<li>' + radio + itemName +
                             ' <a href="#" class="es-item-remove js-item-remove" data-storage="' + storage + '" data-container="' + container + '" data-action="' + removeAction + '" data-id="' + response.item + '"><span class="es-sprite es-sprite-close"></span></a></li>')

@@ -64,7 +64,7 @@ class Es_User_Profile
 		if ( $page == 'es_buyer' ) {
 			$user_entity = es_get_buyer();
 			$title = __( 'Buyer Info', 'es-plugin' );
-			$template = apply_filters( 'es_agent_profile_template_path', ES_ADMIN_TEMPLATES . 'buyers/profile.php' );
+			$template = es_locate_template( 'buyers/profile.php', 'admin', 'es_buyer_profile_template_path' );
 		}
 
 		$id = sanitize_key( filter_input( INPUT_GET, 'id' ) );

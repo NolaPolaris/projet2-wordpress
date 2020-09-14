@@ -3,7 +3,7 @@ Contributors: Estatik
 Donate link: http://estatik.net/
 Tags: real estate, idx plugin, realestate, property, housing, listing, listings, property listing, realtor, agent, house, wordpress real estate plugin, broker, mls, rets, property import, real estate agent, real estate website, property management
 Requires at least: 3.9
-Tested up to: 5.4.1
+Tested up to: 5.5.1
 Requires PHP: 5.6
 Stable tag: trunk
 License: GPLv2 or later
@@ -282,6 +282,32 @@ Please check if your images have titles without spaces. Use underscore [_] inste
 
 
 == Changelog ==
+
+
+
+= 3.9.7 (September 10, 2020) =
+
+
+
+* NEW: WordPress 5.5.1 support added (all versions)
+* NEW: option to override plugin templates via child theme added (all versions)
+* NEW: warning popup message added when deleting RETS profile (Premium)
+* NEW: map marker popup for multiple listings (units) with same lat & long implemented (PRO & Premium)
+* NEW: Web API support added (Premium)
+* NEW: updates queue details & reset options in Synchronization added (Premium)
+* NEW: extra import tools added (pause, editing, one-time import) (Premium)
+* NEW: Debug mode added (Premium)
+* NEW: date selection for updates check added (Premium)
+* NEW: extra filters for synchronization added (Premium)
+* FIX: wp_mail FROM parameter for Request Form widget fixed (all versions)
+* FIX: wp_make_content_images_responsive fix added (all versions)
+* FIX: delete icon display glitch in Data Manager - Labels - Featured fixed (all versions)
+* FIX: tags generation in description fixed (all versions)
+* FIX: PDF flyer bug for PHP 7 fixed (PRO & Premium)
+* FIX: CSS class for html body in Agents (admin area) fixed (PRO & Premium)
+* FIX: address skipping in RETS synchronizer fixed (Premium)
+* FIX: MLS properties cache issue fixed (Premium)
+* Other minor fixes
 
 
 

@@ -124,7 +124,7 @@
                 <a href="https://estatik.net/product/estatik-professional/" target="_blank">
                     <span class="icon icon-relatedservices_install"></span><br/>
                     <b class="service-title"><?php _e( 'PRO Pack', 'es-plugin' ); ?></b>
-                    <p><?php _e( 'Unlock advanced features like PDF flyer, Map view, Frontend Submission, Agents, Subscriptions, CSV import, White Label, etc. PLUS choose one of Estatik Themes for FREE!', 'es-plugin' ); ?></p>
+                    <p><?php _e( 'Unlock advanced features like PDF flyer, Map view, Frontend Submission, Agents, Subscriptions, CSV import, White Label, etc.', 'es-plugin' ); ?></p>
                 </a>
             </li>
             <li class="es-box es-box-hover es-box-3">
